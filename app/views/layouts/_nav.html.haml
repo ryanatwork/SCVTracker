@@ -1,0 +1,39 @@
+.topbar-wrapper{:style => "z-index: 5;"}
+  .topbar
+    .topbar-inner
+      .container
+        %h3
+          %a{:href => "#"} Project Name
+        %ul.nav
+          %li.active
+            %a{:href => "#"} Home
+          %li
+            %a{:href => "#"} Link
+          %li
+            %a{:href => "#"} Link
+          %li
+            %a{:href => "#"} Link
+          %li.dropdown
+            %a.dropdown-toggle{:href => "#"} DropDown
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Secondary
+              %li
+                %a{:href => "#"} Something else here
+              %li.divider
+              %li
+                %a{:href => "#"} Another link
+          %form
+            %input{:type=>"text",:placeholder => "Search"}
+          %ul{:class => "nav secondary-nav"}
+            %li.dropdown
+              %a.dropdown-toggle{:href => "#"} Dropdown
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Secondary link
+                %li
+                  %a{:href => "#"} Something else here
+                %li.divider
+                %li
+                  %a{:href => "#"} Another link
+
