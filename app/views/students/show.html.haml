@@ -1,0 +1,96 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @student.first_name
+%p
+  %b Last name:
+  = @student.last_name
+%p
+  %b Id number:
+  = @student.id_number
+%p
+  %b Gender:
+  = @student.gender
+%p
+  %b Dob:
+  = @student.dob
+%p
+  %b Race:
+  = @student.race_id
+%p
+  %b Street number:
+  = @student.street_number
+%p
+  %b Street name:
+  = @student.street_name
+%p
+  %b Address 2:
+  = @student.address_2
+%p
+  %b City:
+  = @student.city
+%p
+  %b Zip code:
+  = @student.zip_code
+%p
+  %b Phone:
+  = @student.phone
+%p
+  %b Cell phone:
+  = @student.cell_phone
+%p
+  %b Alt name:
+  = @student.alt_name
+%p
+  %b School:
+  = @student.school_id
+%p
+  %b Updated school:
+  = @student.updated_school_id
+%p
+  %b Grade:
+  = @student.grade
+%p
+  %b Vehicle:
+  = @student.vehicle
+%p
+  %b Associates:
+  = @student.associates
+%p
+  %b Crimes:
+  = @student.crimes
+%p
+  %b Urn:
+  = @student.urn
+%p
+  %b Probation:
+  = @student.probation
+%p
+  %b Probation status:
+  = @student.probation_status
+%p
+  %b Gang:
+  = @student.gang
+%p
+  %b Moniker:
+  = @student.moniker
+%p
+  %b Drug:
+  = @student.drug_id
+%p
+  %b Programs:
+  = @student.programs
+%p
+  %b Notes:
+  = @student.notes
+%p
+  %b Risk factor:
+  = @student.risk_factor_id
+%p
+  %b School deputy:
+  = @student.school_deputy_id
+
+= link_to 'Edit', edit_student_path(@student)
+\|
+= link_to 'Back', students_path

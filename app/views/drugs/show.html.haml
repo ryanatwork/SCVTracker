@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @drug.name
+
+= link_to 'Edit', edit_drug_path(@drug)
+\|
+= link_to 'Back', drugs_path

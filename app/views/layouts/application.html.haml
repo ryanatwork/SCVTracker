@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title SCVSheriff
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+    %ul.hmenu
+      = render 'devise/menu/registration_items'
+      = render 'devise/menu/login_items'
+    = yield

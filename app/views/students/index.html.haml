@@ -1,0 +1,77 @@
+%h1 Listing students
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Id number
+    %th Gender
+    %th Dob
+    %th Race
+    %th Street number
+    %th Street name
+    %th Address 2
+    %th City
+    %th Zip code
+    %th Phone
+    %th Cell phone
+    %th Alt name
+    %th School
+    %th Updated school
+    %th Grade
+    %th Vehicle
+    %th Associates
+    %th Crimes
+    %th Urn
+    %th Probation
+    %th Probation status
+    %th Gang
+    %th Moniker
+    %th Drug
+    %th Programs
+    %th Notes
+    %th Risk factor
+    %th School deputy
+    %th
+    %th
+    %th
+
+  - @students.each do |student|
+    %tr
+      %td= student.first_name
+      %td= student.last_name
+      %td= student.id_number
+      %td= student.gender
+      %td= student.dob
+      %td= student.race_id
+      %td= student.street_number
+      %td= student.street_name
+      %td= student.address_2
+      %td= student.city
+      %td= student.zip_code
+      %td= student.phone
+      %td= student.cell_phone
+      %td= student.alt_name
+      %td= student.school_id
+      %td= student.updated_school_id
+      %td= student.grade
+      %td= student.vehicle
+      %td= student.associates
+      %td= student.crimes
+      %td= student.urn
+      %td= student.probation
+      %td= student.probation_status
+      %td= student.gang
+      %td= student.moniker
+      %td= student.drug_id
+      %td= student.programs
+      %td= student.notes
+      %td= student.risk_factor_id
+      %td= student.school_deputy_id
+      %td= link_to 'Show', student
+      %td= link_to 'Edit', edit_student_path(student)
+      %td= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Student', new_student_path

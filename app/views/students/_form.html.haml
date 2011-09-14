@@ -1,0 +1,100 @@
+= form_for @student do |f|
+  -if @student.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
+      %ul
+        - @student.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :id_number
+    = f.text_field :id_number
+  .field
+    = f.label :gender
+    = f.text_field :gender
+  .field
+    = f.label :dob
+    = f.date_select :dob
+  .field
+    = f.label :race_id
+    = f.number_field :race_id
+  .field
+    = f.label :street_number
+    = f.text_field :street_number
+  .field
+    = f.label :street_name
+    = f.text_field :street_name
+  .field
+    = f.label :address_2
+    = f.text_field :address_2
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :zip_code
+    = f.text_field :zip_code
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :cell_phone
+    = f.text_field :cell_phone
+  .field
+    = f.label :alt_name
+    = f.text_field :alt_name
+  .field
+    = f.label :school_id
+    = f.number_field :school_id
+  .field
+    = f.label :updated_school_id
+    = f.number_field :updated_school_id
+  .field
+    = f.label :grade
+    = f.text_field :grade
+  .field
+    = f.label :vehicle
+    = f.text_field :vehicle
+  .field
+    = f.label :associates
+    = f.text_field :associates
+  .field
+    = f.label :crimes
+    = f.text_field :crimes
+  .field
+    = f.label :urn
+    = f.text_field :urn
+  .field
+    = f.label :probation
+    = f.check_box :probation
+  .field
+    = f.label :probation_status
+    = f.text_field :probation_status
+  .field
+    = f.label :gang
+    = f.text_field :gang
+  .field
+    = f.label :moniker
+    = f.text_field :moniker
+  .field
+    = f.label :drug_id
+    = f.number_field :drug_id
+  .field
+    = f.label :programs
+    = f.text_area :programs
+  .field
+    = f.label :notes
+    = f.text_area :notes
+  .field
+    = f.label :risk_factor_id
+    = f.number_field :risk_factor_id
+  .field
+    = f.label :school_deputy_id
+    = f.number_field :school_deputy_id
+  .actions
+    = f.submit 'Save'
