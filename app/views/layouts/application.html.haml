@@ -2,6 +2,7 @@
 %html
   %head
     %title SCVSheriff
+    %link{:rel => "stylesheet", :href => "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -14,4 +15,8 @@
     %ul.hmenu
       = render 'devise/menu/registration_items'
       = render 'devise/menu/login_items'
-    = yield
+    .container-fluid
+      .sidebar
+      Hi...
+      .content
+        = yield
