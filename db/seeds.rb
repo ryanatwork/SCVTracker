@@ -76,3 +76,12 @@ puts "School Information"
 ].each do |attributes|
   School.find_or_create_by_name(attributes)
 end
+
+puts "Risk Status"
+[
+  {:status => "High"},
+  {:status => "Medium"},
+  {:status => "Low"},
+].each do |attributes|
+  RiskFactor.find_or_create_by_status(attributes)
+end
