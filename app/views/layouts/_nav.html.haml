@@ -3,28 +3,22 @@
     .topbar-inner
       .container
         %h3
-          %a{:href => "#"} Project Name
+          %a{:href => "#"} SCV Sheriff
         %ul.nav
           %li.active
-            %a{:href => "#"} Home
+            = link_to 'Home', root_path
+          %li
+            = link_to 'Students', students_path
           %li
             %a{:href => "#"} Link
           %li
             %a{:href => "#"} Link
-          %li
-            %a{:href => "#"} Link
-          %li.dropdown
-            %a.dropdown-toggle{:href => "#"} DropDown
-            %ul.dropdown-menu
-              %li
-                %a{:href => "#"} Secondary
-              %li
-                %a{:href => "#"} Something else here
-              %li.divider
-              %li
-                %a{:href => "#"} Another link
-          %form
-            %input{:type=>"text",:placeholder => "Search"}
+          - if user_signed_in?
+            %li
+              = link_to('Logout', destroy_user_session_path, :method => :delete)
+          - else
+            %li
+              = link_to('Login', new_user_session_path)
           %ul{:class => "nav secondary-nav"}
             %li.dropdown
               %a.dropdown-toggle{:href => "#"} Dropdown
