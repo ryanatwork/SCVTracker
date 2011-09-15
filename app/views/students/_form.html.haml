@@ -22,7 +22,7 @@
     = f.label :dob
     = f.date_select :dob,
       :start_year => Time.now.year - 25,
-      :end_year => Time.now.year - 10
+      :end_year => Time.now.year - 10, :include_blank  => 'true'
   .field
     = f.label :race_id
     = select(:student, :race_id, Race.all.collect {|p| [p.name,p.id]})
@@ -89,7 +89,7 @@
     = select("student", "drug_id", Drug.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
   .field
     = f.label :programs
-    = f.text_area :programs
+    = f.text_area :programs, {:class => "xxlarge"}
   .field
     = f.label :notes
     = f.text_area :notes
