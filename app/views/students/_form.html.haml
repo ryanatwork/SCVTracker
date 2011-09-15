@@ -94,7 +94,7 @@
     = f.text_area :notes
   .field
     = f.label :risk_factor_id
-    = f.number_field :risk_factor_id
+    = select(:student, :risk_factor_id, RiskFactor.all.collect {|p| [p.status,p.id]}, {:include_blank => true})
   .field
     = f.label :school_deputy_id
     = f.number_field :school_deputy_id
