@@ -17,7 +17,7 @@
   = @student.dob
 %p
   %b Race:
-  = @student.race_id
+  = @student.race.name unless @student.race.nil?
 %p
   %b Street Number:
   = @student.street_number
