@@ -20,10 +20,12 @@
     = f.text_field :gender
   .field
     = f.label :dob
-    = f.date_select :dob
+    = f.date_select :dob,
+      :start_year => Time.now.year - 25,
+      :end_year => Time.now.year - 10
   .field
     = f.label :race_id
-    = f.number_field :race_id
+    = select("student", "race_id", Race.all.collect {|p| [p.name,p.id]})
   .field
     = f.label :street_number
     = f.text_field :street_number
@@ -50,10 +52,10 @@
     = f.text_field :alt_name
   .field
     = f.label :school_id
-    = f.number_field :school_id
+    = select("student", "school_id", School.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
   .field
     = f.label :updated_school_id
-    = f.number_field :updated_school_id
+    = select("student", "updated_school_id", School.all.collect {|p| [p.name,p.id]}, {:include_blank => true})
   .field
     = f.label :grade
     = f.text_field :grade
@@ -83,7 +85,7 @@
     = f.text_field :moniker
   .field
     = f.label :drug_id
-    = f.number_field :drug_id
+    = select("student", "drug_id", Drug.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
   .field
     = f.label :programs
     = f.text_area :programs
