@@ -85,3 +85,50 @@ puts "Risk Status"
 ].each do |attributes|
   RiskFactor.find_or_create_by_status(attributes)
 end
+
+#Load Development Seed data
+if Rails.env != 'production'
+require 'faker'
+require 'factory_girl_rails'
+
+puts "adding 10 users"
+  10.times {
+    user = Factory(:user)
+    puts "Added #{user.email}"
+    }
+
+puts "adding 50 students"
+  50.times {
+    Student.create(:first_name => Faker::Name.first_name,
+      :last_name => Faker::Name.last_name,
+      :id_number => Faker::Address.zip_code,
+      :gender => ['M','F'].shuffle[0],
+      :dob => Time.at(Time.local(1997,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :race_id => Random.rand(5),
+      :street_number => Faker::Address.street_address,
+      :street_name => Faker::Address.street_name,
+      :address_2 => [Faker::Address.secondary_address, ''].shuffle[0],
+      :city => Faker::Address.city,
+      :zip_code => Faker::Address.zip_code,
+      :phone => Faker::PhoneNumber.phone_number,
+      :cell_phone => Faker::PhoneNumber.phone_number,
+      :alt_name => Faker::Name.first_name,
+      :school_id => Random.rand(10),
+      :updated_school_id => Random.rand(5),
+      :grade => Random.rand(12),
+      :vehicle => Faker::Company.bs,
+      :associates => [Faker::Name.first_name,''].shuffle[0],
+      :crimes => Faker::Company.catch_phrase,
+      :urn => Faker::Company.catch_phrase,
+      :probation => [0,1].shuffle,
+      :probation_status => Faker::Company.catch_phrase,
+      :gang => Faker::Company.bs,
+      :moniker => Faker::Company.bs,
+      :drug_id => Random.rand(10),
+      :programs => Faker::Lorem.paragraph,
+      :notes => Faker::Lorem.paragraph,
+      :risk_factor_id => Random.rand(3)
+    )
+  }
+
+end
