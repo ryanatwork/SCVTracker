@@ -5,99 +5,130 @@
       %ul
         - @student.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :id_number
-    = f.text_field :id_number
-  .field
-    = f.label :gender
-    = select(:student, :gender, options_for_select([['',''],['M', 'M'],['F', 'F']]))
-  .field
-    = f.label :dob
-    = f.date_select :dob,
-      :start_year => Time.now.year - 25,
-      :end_year => Time.now.year - 10, :include_blank  => 'true'
-  .field
-    = f.label :race_id
-    = select(:student, :race_id, Race.all.collect {|p| [p.name,p.id]})
-  .field
-    = f.label :street_number
-    = f.text_field :street_number
-  .field
-    = f.label :street_name
-    = f.text_field :street_name
-  .field
-    = f.label :address_2
-    = f.text_field :address_2
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :zip_code
-    = f.text_field :zip_code
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :cell_phone
-    = f.text_field :cell_phone
-  .field
-    = f.label :alt_name
-    = f.text_field :alt_name
-  .field
-    = f.label :school_id
-    = select("student", "school_id", School.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
-  .field
-    = f.label :updated_school_id
-    = select("student", "updated_school_id", School.all.collect {|p| [p.name,p.id]}, {:include_blank => true})
-  .field
-    = f.label :grade
-    = select(:student,:grade, options_for_select([['7','7'],['8','8'],['9','9'],['10','10'],['11','11'],['12','12']]),
-        {:include_blank => true})
-  .field
-    = f.label :vehicle
-    = f.text_field :vehicle
-  .field
-    = f.label :associates
-    = f.text_field :associates
-  .field
-    = f.label :crimes
-    = f.text_field :crimes
-  .field
-    = f.label :urn
-    = f.text_field :urn
-  .field
-    = f.label :probation
-    = f.check_box :probation
-  .field
-    = f.label :probation_status
-    = f.text_field :probation_status
-  .field
-    = f.label :gang
-    = f.text_field :gang
-  .field
-    = f.label :moniker
-    = f.text_field :moniker
-  .field
-    = f.label :drug_id
-    = select("student", "drug_id", Drug.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
-  .field
-    = f.label :programs
-    = f.text_area :programs, {:class => "xxlarge"}
-  .field
-    = f.label :notes
-    = f.text_area :notes
-  .field
-    = f.label :risk_factor_id
-    = select(:student, :risk_factor_id, RiskFactor.all.collect {|p| [p.status,p.id]}, {:include_blank => true})
-  .field
-    = f.label :school_deputy_id
-    = f.number_field :school_deputy_id
-  .actions
-    = f.submit 'Save'
+  .fieldset
+    .legend
+    .clearfix
+      = f.label :first_name
+      .input
+        = f.text_field :first_name
+    .clearfix
+      = f.label :last_name
+      .input
+        = f.text_field :last_name
+    .clearfix
+      = f.label :id_number
+      .input
+        = f.text_field :id_number
+    .clearfix
+      = f.label :gender
+      .input
+        = select(:student, :gender, options_for_select([['',''],['M', 'M'],['F', 'F']]))
+    .clearfix
+      = f.label :dob
+      .input
+        = f.date_select :dob,
+          :start_year => Time.now.year - 25,
+          :end_year => Time.now.year - 10, :include_blank  => 'true'
+    .clearfix
+      = f.label :race_id
+      .input
+        = select(:student, :race_id, Race.all.collect {|p| [p.name,p.id]})
+    .clearfix
+      = f.label :street_number
+      .input
+        = f.text_field :street_number
+    .clearfix
+      = f.label :street_name
+      .input
+        = f.text_field :street_name
+    .clearfix
+      = f.label :address_2
+      .input
+        = f.text_field :address_2
+    .clearfix
+      = f.label :city
+      .input
+        = f.text_field :city
+    .clearfix
+      = f.label :zip_code
+      .input
+        = f.text_field :zip_code
+    .clearfix
+      = f.label :phone
+      .input
+        = f.text_field :phone
+    .clearfix
+      = f.label :cell_phone
+      .input
+        = f.text_field :cell_phone
+    .clearfix
+      = f.label :alt_name
+      .input
+        = f.text_field :alt_name
+    .clearfix
+      = f.label :school_id
+      .input
+        = select("student", "school_id", School.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
+    .clearfix
+      = f.label :updated_school_id
+      .input
+        = select("student", "updated_school_id", School.all.collect {|p| [p.name,p.id]}, {:include_blank => true})
+    .clearfix
+      = f.label :grade
+      .input
+        = select(:student,:grade, options_for_select([['7','7'],['8','8'],['9','9'],['10','10'],['11','11'],['12','12']]),
+          {:include_blank => true})
+    .clearfix
+      = f.label :vehicle
+      .input
+        = f.text_field :vehicle
+    .clearfix
+      = f.label :associates
+      .input
+        = f.text_field :associates
+    .clearfix
+      = f.label :crimes
+      .input
+        = f.text_field :crimes
+    .clearfix
+      = f.label :urn
+      .input
+        = f.text_field :urn
+    .clearfix
+      = f.label :probation
+      .input
+        = f.check_box :probation
+    .clearfix
+      = f.label :probation_status
+      .input
+        = f.text_field :probation_status
+    .clearfix
+      = f.label :gang
+      .input
+        = f.text_field :gang
+    .clearfix
+      = f.label :moniker
+      .input
+        = f.text_field :moniker
+    .clearfix
+      = f.label :drug_id
+      .input
+        = select("student", "drug_id", Drug.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
+    .clearfix
+      = f.label :programs
+      .input
+        = f.text_area :programs, {:rows => "4",:class => "xxlarge"}
+    .clearfix
+      = f.label :notes
+      .input
+        = f.text_area :notes, {:rows => "4", :class => "xxlarge"}
+    .clearfix
+      = f.label :risk_factor_id
+      .input
+        = select(:student, :risk_factor_id, RiskFactor.all.collect {|p| [p.status,p.id]}, {:include_blank => true})
+    .clearfix
+      = f.label :school_deputy_id
+      .input
+        = f.number_field :school_deputy_id
+    .actions
+      = f.submit 'Save', {:class => "btn primary"}
