@@ -13,6 +13,7 @@ end
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'meta_search'
 
 group :development do
   gem 'ZenTest'
