@@ -3,10 +3,10 @@
     .topbar-inner
       .container
         %h3
-          %a{:href => "#"} SCV Sheriff
+          = link_to 'SCV Sheriff', root_path
         %ul.nav
           %li.active
-            = link_to 'Home', root_path
+            = link_to 'Home', 'home/index'
           %li
             = link_to 'Students', students_path
           %li
