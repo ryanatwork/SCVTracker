@@ -1,4 +1,36 @@
-%h1 Listing students
+%h1  Students
+
+=form_tag students_path, :method => 'get' do
+  .well
+    .row
+      .span8
+        .clearfix
+          = label_tag(:first_name, 'First name')
+          .input
+            = text_field_tag :first_name, params[:first_name]
+        .clearfix
+          = label_tag(:last_name, 'Last name')
+          .input
+            = text_field_tag :last_name, params[:last_name]
+        .clearfix
+          = label_tag(:gang, 'Gang')
+          .input
+            = text_field_tag :gang, params[:gang]
+      .span8
+        .clearfix
+          = label_tag(:moniker,'Moniker')
+          .input
+            = text_field_tag :moniker, params[:moniker]
+        .clearfix
+          = label_tag(:school_id, 'School')
+          .input
+            = collection_select :student,:school_id, School.all, :id, :name, :include_blank => true
+        .clearfix
+          = label_tag(:risk_factor_id, 'Risk Factor')
+          .input
+            = collection_select :risk_factor, :risk_factor_id, RiskFactor.all, :id, :status, :include_blank => true
+
+  = submit_tag 'Search',:name => nil, :class => "btn primary"
 
 %table
   %tr
