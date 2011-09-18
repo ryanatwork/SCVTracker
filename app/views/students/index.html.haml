@@ -3,7 +3,7 @@
 =form_tag students_path, :method => 'get' do
   .well
     .row
-      .span8
+      .span6
         .clearfix
           = label_tag(:first_name, 'First name')
           .input
@@ -16,7 +16,7 @@
           = label_tag(:gang, 'Gang')
           .input
             = text_field_tag :gang, params[:gang]
-      .span8
+      .span6
         .clearfix
           = label_tag(:moniker,'Moniker')
           .input
