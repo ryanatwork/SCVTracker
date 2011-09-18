@@ -1,95 +1,98 @@
 %p#notice= notice
 
-%p
-  %b First Name:
-  = @student.first_name
-%p
-  %b Last Name:
-  = @student.last_name
-%p
-  %b ID Number:
-  = @student.id_number
-%p
-  %b Gender:
-  = @student.gender
-%p
-  %b DOB:
-  = @student.dob
-%p
-  %b Race:
-  = @student.race.name unless @student.race.nil?
-%p
-  %b Street Number:
-  = @student.street_number
-%p
-  %b Street Name:
-  = @student.street_name
-%p
-  %b Address 2:
-  = @student.address_2
-%p
-  %b City:
-  = @student.city
-%p
-  %b Zip Code:
-  = @student.zip_code
-%p
-  %b Phone:
-  = @student.phone
-%p
-  %b Cell Phone:
-  = @student.cell_phone
-%p
-  %b Alt Name:
-  = @student.alt_name
-%p
-  %b School:
-  = @student.school.name unless @student.school.nil?
-%p
-  %b Updated School:
-  = @student.updated_school.name unless @student.updated_school.nil?
-%p
-  %b Grade:
-  = @student.grade
-%p
-  %b Vehicle:
-  = @student.vehicle
-%p
-  %b Associates:
-  = @student.associates
-%p
-  %b Crimes:
-  = @student.crimes
-%p
-  %b URN:
-  = @student.urn
-%p
-  %b Probation:
-  = @student.probation
-%p
-  %b Probation Status:
-  = @student.probation_status
-%p
-  %b Gang:
-  = @student.gang
-%p
-  %b Moniker:
-  = @student.moniker
-%p
-  %b Drug:
-  = @student.drug.name unless @student.drug.nil?
-%p
-  %b Programs:
-  = @student.programs
-%p
-  %b Notes:
-  = @student.notes
-%p
-  %b Risk factor:
-  = @student.risk_factor.status unless @student.risk_factor.nil?
-%p
-  %b School deputy:
-  = @student.school_deputy_id
+.row
+  .span8
+    %p
+      %b First Name:
+      = @student.first_name
+    %p
+      %b Last Name:
+      = @student.last_name
+    %p
+      %b ID Number:
+      = @student.id_number
+    %p
+      %b Gender:
+      = @student.gender
+    %p
+      %b DOB:
+      = @student.dob
+    %p
+      %b Race:
+      = @student.race.name unless @student.race.nil?
+    %p
+      %b Street Number:
+      = @student.street_number
+    %p
+      %b Street Name:
+      = @student.street_name
+    %p
+      %b Address 2:
+      = @student.address_2
+    %p
+      %b City:
+      = @student.city
+    %p
+      %b Zip Code:
+      = @student.zip_code
+  .span8
+    %p
+      %b Phone:
+      = @student.phone
+    %p
+      %b Cell Phone:
+      = @student.cell_phone
+    %p
+      %b Alt Name:
+      = @student.alt_name
+    %p
+      %b School:
+      = @student.school.name unless @student.school.nil?
+    %p
+      %b Updated School:
+      = @student.updated_school.name unless @student.updated_school.nil?
+    %p
+      %b Grade:
+      = @student.grade
+    %p
+      %b Vehicle:
+      = @student.vehicle
+    %p
+      %b Associates:
+      = @student.associates
+    %p
+      %b Crimes:
+      = @student.crimes
+    %p
+      %b URN:
+      = @student.urn
+    %p
+      %b Probation:
+      = @student.probation
+    %p
+      %b Probation Status:
+      = @student.probation_status
+    %p
+      %b Gang:
+      = @student.gang
+    %p
+      %b Moniker:
+      = @student.moniker
+    %p
+      %b Drug:
+      = @student.drug.name unless @student.drug.nil?
+    %p
+      %b Programs:
+      = @student.programs
+    %p
+      %b Notes:
+      = @student.notes
+    %p
+      %b Risk factor:
+      = @student.risk_factor.status unless @student.risk_factor.nil?
+    %p
+      %b School deputy:
+      = @student.school_deputy_id
 
 = link_to 'Edit', edit_student_path(@student)
 \|
