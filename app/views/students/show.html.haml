@@ -92,7 +92,7 @@
       = @student.risk_factor.status unless @student.risk_factor.nil?
     %p
       %b School deputy:
-      = @student.school_deputy_id
+      = @student.deputy.name unless @student.school_deputy_id.nil?
 
 = link_to 'Edit', edit_student_path(@student)
 \|
