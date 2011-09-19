@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#name" do
+    it "should concat the first and last name" do
+      user = Factory(:user, :first_name => 'Bob', :last_name => 'Smith')
+      test = user.name
+      test.should == "Bob Smith"
+    end
+  end
 end
