@@ -24,7 +24,7 @@
         %td= student.grade
         %td= link_to 'Show', student
         %td= link_to 'Edit', edit_student_path(student)
-
+  = will_paginate @students
 
 = link_to('Account Settings', edit_user_registration_path)
 

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     if current_user.school_deputy
-      @students = current_user.students
+      @students = current_user.students.paginate(:per_page => 25, :page => params[:page])
     end
   end
 
