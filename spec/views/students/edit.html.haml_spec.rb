@@ -43,7 +43,7 @@ describe "students/edit.html.haml" do
       assert_select "input#student_first_name", :name => "student[first_name]"
       assert_select "input#student_last_name", :name => "student[last_name]"
       assert_select "input#student_id_number", :name => "student[id_number]"
-      assert_select "input#student_gender", :name => "student[gender]"
+      assert_select "select#student_gender", :name => "student[gender]"
       assert_select "select#student_race_id", :name => "student[race_id]"
       assert_select "input#student_street_number", :name => "student[street_number]"
       assert_select "input#student_street_name", :name => "student[street_name]"
@@ -55,7 +55,7 @@ describe "students/edit.html.haml" do
       assert_select "input#student_alt_name", :name => "student[alt_name]"
       assert_select "select#student_school_id", :name => "student[school_id]"
       assert_select "select#student_updated_school_id", :name => "student[updated_school_id]"
-      assert_select "input#student_grade", :name => "student[grade]"
+      assert_select "select#student_grade", :name => "student[grade]"
       assert_select "input#student_vehicle", :name => "student[vehicle]"
       assert_select "input#student_associates", :name => "student[associates]"
       assert_select "input#student_crimes", :name => "student[crimes]"
@@ -67,7 +67,7 @@ describe "students/edit.html.haml" do
       assert_select "select#student_drug_id", :name => "student[drug_id]"
       assert_select "textarea#student_programs", :name => "student[programs]"
       assert_select "textarea#student_notes", :name => "student[notes]"
-      assert_select "input#student_risk_factor_id", :name => "student[risk_factor_id]"
+      assert_select "select#student_risk_factor_id", :name => "student[risk_factor_id]"
       assert_select "input#student_school_deputy_id", :name => "student[school_deputy_id]"
     end
   end
