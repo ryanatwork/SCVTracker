@@ -41,8 +41,7 @@
           = f.label :risk_factor_id, 'Risk Factor'
           .input
             = f.collection_select :risk_factor_status_contains, RiskFactor.all, :status, :status, :include_blank => true
-
-  = submit_tag 'Search',:name => nil, :class => "btn primary"
+    = submit_tag 'Search',:name => nil, :class => "btn primary"
 
 %table
   %tr
