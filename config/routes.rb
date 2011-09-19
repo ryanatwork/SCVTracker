@@ -1,5 +1,6 @@
 SCVSheriff::Application.routes.draw do
-  get "home/index"
+
+  resources :home, :only => [:index]
 
   resources :races
 
