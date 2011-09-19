@@ -97,8 +97,8 @@ puts "adding 10 users"
     puts "Added #{user.email}"
     }
 
-puts "adding 50 students"
-  50.times {
+puts "adding 100 students"
+  100.times {
     Student.create(:first_name => Faker::Name.first_name,
       :last_name => Faker::Name.last_name,
       :id_number => Faker::Address.zip_code,
