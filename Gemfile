@@ -14,6 +14,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'meta_search'
+gem "paperclip", "~> 2.4"
 gem 'will_paginate'
 
 group :development do

@@ -1,7 +1,9 @@
 %p#notice= notice
 
 .row
-  .span8
+  .span6
+    = image_tag @student.photo.url(:medium)
+
     %p
       %b First Name:
       = @student.first_name
@@ -35,7 +37,7 @@
     %p
       %b Zip Code:
       = @student.zip_code
-  .span8
+  .span6
     %p
       %b Phone:
       = @student.phone
