@@ -14,6 +14,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'meta_search'
+gem 'will_paginate'
 
 group :development do
   gem 'ZenTest'
