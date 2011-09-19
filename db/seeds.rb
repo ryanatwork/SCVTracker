@@ -128,8 +128,9 @@ puts "adding 100 students"
       :drug_id => Random.rand(10),
       :programs => Faker::Lorem.paragraph,
       :notes => Faker::Lorem.paragraph,
-      :risk_factor_id => Random.rand(3)
+      :risk_factor_id => Random.rand(3),
+      :school_deputy_id => User.where(:school_deputy => true).map(&:id).shuffle[0]
     )
   }
-
+puts User.where(:school_deputy => true).map(&:id)
 end
