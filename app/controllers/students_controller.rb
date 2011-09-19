@@ -4,7 +4,8 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @search = Student.search(params[:search])
+    @students = @search.all
 
     respond_to do |format|
       format.html # index.html.erb

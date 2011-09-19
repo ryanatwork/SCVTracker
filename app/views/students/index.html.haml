@@ -1,34 +1,46 @@
 %h1  Students
 
-=form_tag students_path, :method => 'get' do
+= form_for @search do |f|
   .well
     .row
       .span6
         .clearfix
-          = label_tag(:first_name, 'First name')
+          = f.label :first_name_contains, 'First name'
           .input
-            = text_field_tag :first_name, params[:first_name]
+            - if params[:search].nil?
+              = f.text_field :first_name_contains
+            - else
+              = f.text_field :first_name_contains, :value => params[:search][:first_name_contains]
         .clearfix
-          = label_tag(:last_name, 'Last name')
+          = f.label :last_name_contains, 'Last name'
           .input
-            = text_field_tag :last_name, params[:last_name]
+            - if params[:search].nil?
+              = f.text_field :last_name_contains
+            - else
+              = f.text_field :last_name_contains, :value => params[:search][:last_name_contains]
         .clearfix
-          = label_tag(:gang, 'Gang')
+          = f.label :gang, 'Gang'
           .input
-            = text_field_tag :gang, params[:gang]
+            - if params[:search].nil?
+              = f.text_field :gang_contains
+            - else
+              = f.text_field :gang_contains, :value => params[:search][:gang_contains]
       .span6
         .clearfix
-          = label_tag(:moniker,'Moniker')
+          = f.label :moniker,'Moniker'
           .input
-            = text_field_tag :moniker, params[:moniker]
+            - if params[:search].nil?
+              = f.text_field :moniker_contains
+            - else
+              = f.text_field :moniker_contains, :value => params[:search][:moniker_contains]
         .clearfix
-          = label_tag(:school_id, 'School')
+          = f.label :school_id, 'School'
           .input
-            = collection_select :student,:school_id, School.all, :id, :name, :include_blank => true
+            = f.collection_select :school_name_contains, School.all, :name, :name, :include_blank => true
         .clearfix
-          = label_tag(:risk_factor_id, 'Risk Factor')
+          = f.label :risk_factor_id, 'Risk Factor'
           .input
-            = collection_select :risk_factor, :risk_factor_id, RiskFactor.all, :id, :status, :include_blank => true
+            = f.collection_select :risk_factor_status_contains, RiskFactor.all, :status, :status, :include_blank => true
 
   = submit_tag 'Search',:name => nil, :class => "btn primary"
 
