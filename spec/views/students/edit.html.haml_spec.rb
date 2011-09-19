@@ -68,7 +68,7 @@ describe "students/edit.html.haml" do
       assert_select "textarea#student_programs", :name => "student[programs]"
       assert_select "textarea#student_notes", :name => "student[notes]"
       assert_select "select#student_risk_factor_id", :name => "student[risk_factor_id]"
-      assert_select "input#student_school_deputy_id", :name => "student[school_deputy_id]"
+      assert_select "select#student_school_deputy_id", :name => "student[school_deputy_id]"
     end
   end
 end

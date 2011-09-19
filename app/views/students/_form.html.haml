@@ -129,6 +129,6 @@
     .clearfix
       = f.label :school_deputy_id
       .input
-        = f.number_field :school_deputy_id
+        = collection_select(:student,:school_deputy_id,User.where(:school_deputy => true), :id, :name, :prompt => true)
     .actions
       = f.submit 'Save', {:class => "btn primary"}
