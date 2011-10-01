@@ -20,6 +20,9 @@
       %b DOB:
       = @student.dob
     %p
+      %b Age:
+      = @student.age(@student.dob) unless @student.dob.nil?
+    %p
       %b Race:
       = @student.race.name unless @student.race.nil?
     %p
