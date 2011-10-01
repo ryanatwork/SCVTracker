@@ -9,4 +9,8 @@ class Student < ActiveRecord::Base
 
   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
+  def age(dob, now = Time.now.utc.to_date)
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  end
+
 end
