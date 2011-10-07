@@ -1,0 +1,19 @@
+%h1 Listing crimes
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @crimes.each do |crime|
+    %tr
+      %td= crime.name
+      %td= link_to 'Show', crime
+      %td= link_to 'Edit', edit_crime_path(crime)
+      %td= link_to 'Destroy', crime, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Crime', new_crime_path
