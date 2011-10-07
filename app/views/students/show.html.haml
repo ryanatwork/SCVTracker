@@ -3,7 +3,8 @@
 .row
   .span6
     = image_tag @student.photo.url(:medium)
-
+    %br
+    %br
     %p
       %b First Name:
       = @student.first_name
@@ -40,7 +41,6 @@
     %p
       %b Zip Code:
       = @student.zip_code
-  .span6
     %p
       %b Phone:
       = @student.phone
@@ -50,6 +50,8 @@
     %p
       %b Alt Name:
       = @student.alt_name
+
+  .span7
     %p
       %b School:
       = @student.school.name unless @student.school.nil?
@@ -99,6 +101,8 @@
       %b School deputy:
       = @student.deputy.name unless @student.school_deputy_id.nil?
 
-= link_to 'Edit', edit_student_path(@student)
-\|
-= link_to 'Back', students_path
+%br
+
+= link_to 'Edit', edit_student_path(@student), :class => "btn primary"
+&nbsp;&nbsp;
+= link_to 'Back', students_path, :class => "btn"
