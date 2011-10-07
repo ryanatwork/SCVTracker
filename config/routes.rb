@@ -1,5 +1,7 @@
 SCVSheriff::Application.routes.draw do
 
+  resources :teams
+
   resources :crimes
 
   resources :crime_tips
