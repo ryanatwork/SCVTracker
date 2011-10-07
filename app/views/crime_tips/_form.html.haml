@@ -1,0 +1,127 @@
+= form_for @crime_tip do |f|
+  -if @crime_tip.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@crime_tip.errors.count, "error")} prohibited this crime_tip from being saved:"
+      %ul
+        - @crime_tip.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :date_rec
+    = f.date_select :date_rec
+  .field
+    = f.label :date_due
+    = f.date_select :date_due
+  .field
+    = f.label :crime_id
+    = f.number_field :crime_id
+  .field
+    = f.label :street_number
+    = f.text_field :street_number
+  .field
+    = f.label :street_name
+    = f.text_field :street_name
+  .field
+    = f.label :cross_street
+    = f.text_field :cross_street
+  .field
+    = f.label :informant_name
+    = f.text_field :informant_name
+  .field
+    = f.label :informant_phone
+    = f.text_field :informant_phone
+  .field
+    = f.label :informant_email
+    = f.text_field :informant_email
+  .field
+    = f.label :suspect_first_name
+    = f.text_field :suspect_first_name
+  .field
+    = f.label :suspect_last_name
+    = f.text_field :suspect_last_name
+  .field
+    = f.label :suspect_dob
+    = f.date_select :suspect_dob
+  .field
+    = f.label :suspect_age
+    = f.text_field :suspect_age
+  .field
+    = f.label :suspect_race_id
+    = f.number_field :suspect_race_id
+  .field
+    = f.label :suspect_gender
+    = f.text_field :suspect_gender
+  .field
+    = f.label :suspect_street_number
+    = f.text_field :suspect_street_number
+  .field
+    = f.label :suspect_street_name
+    = f.text_field :suspect_street_name
+  .field
+    = f.label :suspect_city
+    = f.text_field :suspect_city
+  .field
+    = f.label :suspect_school_id
+    = f.number_field :suspect_school_id
+  .field
+    = f.label :suspect_phone
+    = f.text_field :suspect_phone
+  .field
+    = f.label :suspect_cell
+    = f.text_field :suspect_cell
+  .field
+    = f.label :gang
+    = f.text_field :gang
+  .field
+    = f.label :vehicle
+    = f.text_field :vehicle
+  .field
+    = f.label :license_plate
+    = f.text_field :license_plate
+  .field
+    = f.label :drug_id
+    = f.number_field :drug_id
+  .field
+    = f.label :team_id
+    = f.number_field :team_id
+  .field
+    = f.label :date_assigned
+    = f.date_select :date_assigned
+  .field
+    = f.label :date_completed
+    = f.date_select :date_completed
+  .field
+    = f.label :charges
+    = f.text_field :charges
+  .field
+    = f.label :urn
+    = f.text_field :urn
+  .field
+    = f.label :clearance
+    = f.text_area :clearance
+  .field
+    = f.label :side_notes
+    = f.text_area :side_notes
+  .field
+    = f.label :search_warrant
+    = f.check_box :search_warrant
+  .field
+    = f.label :probation_search
+    = f.check_box :probation_search
+  .field
+    = f.label :parole_search
+    = f.check_box :parole_search
+  .field
+    = f.label :arrested
+    = f.check_box :arrested
+  .field
+    = f.label :status_id
+    = f.number_field :status_id
+  .field
+    = f.label :suspect_2
+    = f.text_field :suspect_2
+  .field
+    = f.label :suspect_3
+    = f.text_field :suspect_3
+  .actions
+    = f.submit 'Save'

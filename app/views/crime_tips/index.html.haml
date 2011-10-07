@@ -1,0 +1,95 @@
+%h1 Listing crime_tips
+
+%table
+  %tr
+    %th Date rec
+    %th Date due
+    %th Crime
+    %th Street number
+    %th Street name
+    %th Cross street
+    %th Informant name
+    %th Informant phone
+    %th Informant email
+    %th Suspect first name
+    %th Suspect last name
+    %th Suspect dob
+    %th Suspect age
+    %th Suspect race
+    %th Suspect gender
+    %th Suspect street number
+    %th Suspect street name
+    %th Suspect city
+    %th Suspect school
+    %th Suspect phone
+    %th Suspect cell
+    %th Gang
+    %th Vehicle
+    %th License plate
+    %th Drug
+    %th Team
+    %th Date assigned
+    %th Date completed
+    %th Charges
+    %th Urn
+    %th Clearance
+    %th Side notes
+    %th Search warrant
+    %th Probation search
+    %th Parole search
+    %th Arrested
+    %th Status
+    %th Suspect 2
+    %th Suspect 3
+    %th
+    %th
+    %th
+
+  - @crime_tips.each do |crime_tip|
+    %tr
+      %td= crime_tip.date_rec
+      %td= crime_tip.date_due
+      %td= crime_tip.crime_id
+      %td= crime_tip.street_number
+      %td= crime_tip.street_name
+      %td= crime_tip.cross_street
+      %td= crime_tip.informant_name
+      %td= crime_tip.informant_phone
+      %td= crime_tip.informant_email
+      %td= crime_tip.suspect_first_name
+      %td= crime_tip.suspect_last_name
+      %td= crime_tip.suspect_dob
+      %td= crime_tip.suspect_age
+      %td= crime_tip.suspect_race_id
+      %td= crime_tip.suspect_gender
+      %td= crime_tip.suspect_street_number
+      %td= crime_tip.suspect_street_name
+      %td= crime_tip.suspect_city
+      %td= crime_tip.suspect_school_id
+      %td= crime_tip.suspect_phone
+      %td= crime_tip.suspect_cell
+      %td= crime_tip.gang
+      %td= crime_tip.vehicle
+      %td= crime_tip.license_plate
+      %td= crime_tip.drug_id
+      %td= crime_tip.team_id
+      %td= crime_tip.date_assigned
+      %td= crime_tip.date_completed
+      %td= crime_tip.charges
+      %td= crime_tip.urn
+      %td= crime_tip.clearance
+      %td= crime_tip.side_notes
+      %td= crime_tip.search_warrant
+      %td= crime_tip.probation_search
+      %td= crime_tip.parole_search
+      %td= crime_tip.arrested
+      %td= crime_tip.status_id
+      %td= crime_tip.suspect_2
+      %td= crime_tip.suspect_3
+      %td= link_to 'Show', crime_tip
+      %td= link_to 'Edit', edit_crime_tip_path(crime_tip)
+      %td= link_to 'Destroy', crime_tip, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Crime tip', new_crime_tip_path

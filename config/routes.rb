@@ -1,5 +1,7 @@
 SCVSheriff::Application.routes.draw do
 
+  resources :crime_tips
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :home, :only => [:index]

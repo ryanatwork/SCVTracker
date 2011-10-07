@@ -1,0 +1,123 @@
+%p#notice= notice
+
+%p
+  %b Date rec:
+  = @crime_tip.date_rec
+%p
+  %b Date due:
+  = @crime_tip.date_due
+%p
+  %b Crime:
+  = @crime_tip.crime_id
+%p
+  %b Street number:
+  = @crime_tip.street_number
+%p
+  %b Street name:
+  = @crime_tip.street_name
+%p
+  %b Cross street:
+  = @crime_tip.cross_street
+%p
+  %b Informant name:
+  = @crime_tip.informant_name
+%p
+  %b Informant phone:
+  = @crime_tip.informant_phone
+%p
+  %b Informant email:
+  = @crime_tip.informant_email
+%p
+  %b Suspect first name:
+  = @crime_tip.suspect_first_name
+%p
+  %b Suspect last name:
+  = @crime_tip.suspect_last_name
+%p
+  %b Suspect dob:
+  = @crime_tip.suspect_dob
+%p
+  %b Suspect age:
+  = @crime_tip.suspect_age
+%p
+  %b Suspect race:
+  = @crime_tip.suspect_race_id
+%p
+  %b Suspect gender:
+  = @crime_tip.suspect_gender
+%p
+  %b Suspect street number:
+  = @crime_tip.suspect_street_number
+%p
+  %b Suspect street name:
+  = @crime_tip.suspect_street_name
+%p
+  %b Suspect city:
+  = @crime_tip.suspect_city
+%p
+  %b Suspect school:
+  = @crime_tip.suspect_school_id
+%p
+  %b Suspect phone:
+  = @crime_tip.suspect_phone
+%p
+  %b Suspect cell:
+  = @crime_tip.suspect_cell
+%p
+  %b Gang:
+  = @crime_tip.gang
+%p
+  %b Vehicle:
+  = @crime_tip.vehicle
+%p
+  %b License plate:
+  = @crime_tip.license_plate
+%p
+  %b Drug:
+  = @crime_tip.drug_id
+%p
+  %b Team:
+  = @crime_tip.team_id
+%p
+  %b Date assigned:
+  = @crime_tip.date_assigned
+%p
+  %b Date completed:
+  = @crime_tip.date_completed
+%p
+  %b Charges:
+  = @crime_tip.charges
+%p
+  %b Urn:
+  = @crime_tip.urn
+%p
+  %b Clearance:
+  = @crime_tip.clearance
+%p
+  %b Side notes:
+  = @crime_tip.side_notes
+%p
+  %b Search warrant:
+  = @crime_tip.search_warrant
+%p
+  %b Probation search:
+  = @crime_tip.probation_search
+%p
+  %b Parole search:
+  = @crime_tip.parole_search
+%p
+  %b Arrested:
+  = @crime_tip.arrested
+%p
+  %b Status:
+  = @crime_tip.status_id
+%p
+  %b Suspect 2:
+  = @crime_tip.suspect_2
+%p
+  %b Suspect 3:
+  = @crime_tip.suspect_3
+
+= link_to 'Edit', edit_crime_tip_path(@crime_tip)
+\|
+= link_to 'Back', crime_tips_path
