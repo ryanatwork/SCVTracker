@@ -133,4 +133,52 @@ puts "adding 100 students"
     )
   }
 puts User.where(:school_deputy => true).map(&:id)
+
+puts "adding 100 crime tips"
+  100.times {
+    CrimeTip.create(
+      :date_rec => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :date_due => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :crime_id => Random.rand(5),
+      :street_number => Faker::Address.street_address,
+      :street_name => Faker::Address.street_name,
+      :cross_street => Faker::Address.street_name,
+      :informant_name => Faker::Name.first_name + ' ' + Faker::Name.last_name,
+      :informant_phone => Faker::PhoneNumber.phone_number,
+      :informant_email => "email",
+      :suspect_first_name => Faker::Name.first_name,
+      :suspect_last_name => Faker::Name.last_name,
+      :suspect_dob => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :suspect_age => Random.rand(100),
+      :suspect_race_id => Random.rand(5),
+      :suspect_gender => ['M','F'].shuffle[0],
+      :suspect_street_number => Faker::Address.street_address,
+      :suspect_street_name => Faker::Address.street_name,
+      :suspect_city => Faker::Address.city,
+      :suspect_school_id => Random.rand(10),
+      :suspect_phone => Faker::PhoneNumber.phone_number,
+      :suspect_cell => Faker::PhoneNumber.phone_number,
+      :gang => Faker::Name.last_name,
+      :vehicle => Faker::Name.last_name,
+      :license_plate => Faker::Name.first_name,
+      :drug_id => Random.rand(10),
+      :team_id => Random.rand(10),
+      :date_assigned => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :date_completed => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :charges => Faker::Company.bs,
+      :urn => Faker::Company.bs,
+      :clearance => Faker::Lorem.paragraph,
+      :side_notes => Faker::Lorem.paragraph,
+      :search_warrant => [0,1].shuffle,
+      :probation_search => [0,1].shuffle,
+      :parole_search => [0,1].shuffle,
+      :arrested => [0,1].shuffle,
+      :status_id => Random.rand(3),
+      :suspect_2 => Faker::Name.first_name,
+      :suspect_3 => Faker::Name.last_name
+  )
+  }
+
+
+
 end
