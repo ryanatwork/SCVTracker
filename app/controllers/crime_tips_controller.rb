@@ -2,6 +2,7 @@ class CrimeTipsController < ApplicationController
   # GET /crime_tips
   # GET /crime_tips.json
   def index
+    @search = CrimeTip.search(params[:search])
     @crime_tips = CrimeTip.all
 
     respond_to do |format|

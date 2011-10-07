@@ -1,5 +1,30 @@
 %h1 Listing Crime Tips
 
+= form_for @search do |f|
+  .well
+    .row
+      .span6
+        .clearfix
+          = label_tag 'Tip Number'
+          .input
+            = text_field_tag 'tip_number'
+        .clearfix
+          = f.label :crime_id_contains, 'Crime Type'
+          .input
+            = text_field_tag 'crime_id'
+        .clearfix
+          = f.label :date_rec, 'Received'
+      .span6
+        .clearfix
+          = f.label :street_number,'Street Number'
+          .input
+            - if params[:search].nil?
+              = f.text_field :street_number_contains
+            - else
+              = f.text_field :street_number_contains, :value => params[:search][:street_number_contains]
+    = submit_tag 'Search',:name => nil, :class => "btn primary"
+
+
 %table
   %tr
     %th Tip Number
