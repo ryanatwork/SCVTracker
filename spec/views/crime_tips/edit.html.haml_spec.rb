@@ -74,7 +74,7 @@ describe "crime_tips/edit.html.haml" do
       assert_select "input#crime_tip_probation_search", :name => "crime_tip[probation_search]"
       assert_select "input#crime_tip_parole_search", :name => "crime_tip[parole_search]"
       assert_select "input#crime_tip_arrested", :name => "crime_tip[arrested]"
-      assert_select "input#crime_tip_status_id", :name => "crime_tip[status_id]"
+      assert_select "select#crime_tip_status", :name => "crime_tip[status]"
       assert_select "input#crime_tip_suspect_2", :name => "crime_tip[suspect_2]"
       assert_select "input#crime_tip_suspect_3", :name => "crime_tip[suspect_3]"
     end
