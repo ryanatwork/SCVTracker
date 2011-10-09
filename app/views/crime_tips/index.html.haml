@@ -3,7 +3,7 @@
 = form_for @search do |f|
   .well
     .row
-      .span6
+      .span7
         .clearfix
           = f.label :tip_number_contains, 'Tip Number'
           .input
@@ -16,7 +16,6 @@
           = f.label :date_rec, 'Date Received'
           .input
             = f.text_field :date_rec_gte
-      .span6
         .clearfix
           = f.label :street_number_contains,'Street Number'
           .input
@@ -25,6 +24,34 @@
           = f.label :street_name_contains, 'Street Name'
           .input
             = f.text_field :street_name_contains
+        .clearfix
+          = label_tag 'City'
+          .input
+            = text_field_tag 'City'
+
+      .span5
+        .clearfix
+          = f.label :informant_name_contains, 'Informant Name'
+          .input
+            = f.text_field :informant_name_contains
+        .clearfix
+          = f.label :suspect_first_name_contains, 'Suspect First Name'
+          .input
+            = f.text_field :suspect_first_name_contains
+        .clearfix
+          = f.label :suspect_last_name_contains, 'Suspect Last Name'
+          .input
+            = f.text_field :suspect_last_name_contains
+        .clearfix
+          = f.label :assign_team_contains, 'Assigned'
+          .input
+            = f.collection_select :assign_team_contains, Assign.all, :team, :team, :include_blank => true
+        .clearfix
+          = f.label :status_contains, 'Status'
+          .input
+            = f.select(:status_contains, options_for_select([['Open', 'Open'],['Closed', 'Closed']]), :include_blank => true )
+
+
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
 
