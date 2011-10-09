@@ -107,6 +107,46 @@ puts "Crime Type"
 ].each do |attributes|
   Crime.find_or_create_by_name(attributes)
 end
+
+puts "Charge"
+[
+  {:name => "11350 HS"},
+  {:name => "11351 HS"},
+  {:name => "11357 HS"},
+  {:name => "11358 HS"},
+  {:name => "11360 HS"},
+  {:name => "11364 HS"},
+  {:name => "11365 HS"},
+  {:name => "11377 HS"},
+  {:name => "11378 HS"},
+  {:name => "11559 HS"},
+  {:name => "182 PC"},
+  {:name => "211 PC"},
+  {:name => "215 PC"},
+  {:name => "242 PC"},
+  {:name => "243.2 PC"},
+  {:name => "245 PC"},
+  {:name => "415 PC"},
+  {:name => "459 PC"},
+  {:name => "484 PC"},
+  {:name => "487 PC"},
+  {:name => "496 PC"},
+  {:name => "594 PC"},
+  {:name => "626.10 PC"},
+  {:name => "12020 PC"},
+  {:name => "12031 PC"},
+  {:name => "626.10 PC"},
+  {:name => "12020 PC"},
+  {:name => "12031 PC"},
+  {:name => "10851 CVC"},
+  {:name => "114601 CVC"},
+  {:name => "40508 CVC"},
+  {:name => "23222 CVC"},
+  {:name => "2800 CVC"},
+].each do |attributes|
+  Charge.find_or_create_by_name(attributes)
+end
+
 #Load Development Seed data
 if Rails.env != 'production'
 require 'faker'
