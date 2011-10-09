@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009003605) do
+ActiveRecord::Schema.define(:version => 20111009005632) do
 
   create_table "assigns", :force => true do |t|
     t.string   "team"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20111009003605) do
     t.string   "vehicle"
     t.string   "license_plate"
     t.integer  "drug_id"
-    t.integer  "team_id"
     t.date     "date_assigned"
     t.date     "date_completed"
     t.string   "charges"
@@ -68,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20111009003605) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tip_number"
+    t.integer  "assign_id"
   end
 
   create_table "crimes", :force => true do |t|
