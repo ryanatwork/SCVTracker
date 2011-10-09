@@ -37,7 +37,7 @@ FactoryGirl.define do
       probation_search true
       parole_search  true
       arrested  true
-      status_id  1
+      status  "Open"
       suspect_2  Faker::Name.first_name
       suspect_3  Faker::Name.last_name
   end
