@@ -101,16 +101,16 @@
   = @crime_tip.side_notes
 %p
   %b Search warrant:
-  = @crime_tip.search_warrant
+  = @crime_tip.search_warrant ? 'Yes' : 'No'
 %p
   %b Probation search:
-  = @crime_tip.probation_search
+  = @crime_tip.probation_search ? 'Yes' : 'No'
 %p
   %b Parole search:
-  = @crime_tip.parole_search
+  = @crime_tip.parole_search ? 'Yes' : 'No'
 %p
   %b Arrested:
-  = @crime_tip.arrested
+  = @crime_tip.arrested ? 'Yes' : 'No'
 %p
   %b Status:
   = @crime_tip.status_id
