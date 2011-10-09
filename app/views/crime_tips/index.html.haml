@@ -26,18 +26,19 @@
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
 
-%table.zebra-striped
-  %tr
-    %th Tip Number
-    %th Date Received
-    %th Crime
-    %th Location
-    %th Cross street
-    %th Suspect Name
-    %th Assigned
-    %th
-    %th
-    %th
+%table#crime_tip_table.zebra-striped
+  %thead
+    %tr
+      %th Tip Number
+      %th Date Received
+      %th Crime
+      %th Location
+      %th Cross street
+      %th Suspect Name
+      %th Assigned
+      %th
+      %th
+      %th
 
   - @crime_tips.each do |crime_tip|
     %tr
