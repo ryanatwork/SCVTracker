@@ -42,7 +42,7 @@
     %tr
       %td= crime_tip.tip_number
       %td= crime_tip.date_rec
-      %td= crime_tip.crime_id
+      %td= crime_tip.crime.name unless crime_tip.crime.nil?
       %td= crime_tip.street_number + ' '+  crime_tip.street_name
       %td= crime_tip.cross_street
       %td= crime_tip.suspect_first_name + ' ' + crime_tip.suspect_last_name
