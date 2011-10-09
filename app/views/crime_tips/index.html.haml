@@ -1,4 +1,4 @@
-%h1 Listing Crime Tips
+%h1 Crime Tips
 
 = form_for @search do |f|
   .well
@@ -58,4 +58,4 @@
 = will_paginate @crime_tips
 %br
 
-= link_to 'New Crime tip', new_crime_tip_path
+= link_to 'New Crime Tip', new_crime_tip_path, :class => 'btn primary'
