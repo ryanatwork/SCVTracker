@@ -1,125 +1,144 @@
 %p#notice= notice
 
-%p
-  %b Tip Number
+%h2
+  Tip Number
   = @crime_tip.tip_number
-%p
-  %b Date rec:
-  = @crime_tip.date_rec
-%p
-  %b Date due:
-  = @crime_tip.date_due
-%p
-  %b Crime:
-  = @crime_tip.crime.name unless @crime_tip.crime.nil?
-%p
-  %b Street number:
-  = @crime_tip.street_number
-%p
-  %b Street name:
-  = @crime_tip.street_name
-%p
-  %b Cross street:
-  = @crime_tip.cross_street
-%p
-  %b Informant name:
-  = @crime_tip.informant_name
-%p
-  %b Informant phone:
-  = @crime_tip.informant_phone
-%p
-  %b Informant email:
-  = @crime_tip.informant_email
-%p
-  %b Suspect first name:
-  = @crime_tip.suspect_first_name
-%p
-  %b Suspect last name:
-  = @crime_tip.suspect_last_name
-%p
-  %b Suspect dob:
-  = @crime_tip.suspect_dob
-%p
-  %b Suspect age:
-  = @crime_tip.suspect_age
-%p
-  %b Suspect race:
-  = @crime_tip.suspect_race.name unless @crime_tip.suspect_race.nil?
-%p
-  %b Suspect gender:
-  = @crime_tip.suspect_gender
-%p
-  %b Suspect street number:
-  = @crime_tip.suspect_street_number
-%p
-  %b Suspect street name:
-  = @crime_tip.suspect_street_name
-%p
-  %b Suspect city:
-  = @crime_tip.suspect_city
-%p
-  %b Suspect school:
-  = @crime_tip.suspect_school.name unless @crime_tip.suspect_school.nil?
-%p
-  %b Suspect phone:
-  = @crime_tip.suspect_phone
-%p
-  %b Suspect cell:
-  = @crime_tip.suspect_cell
-%p
-  %b Gang:
-  = @crime_tip.gang
-%p
-  %b Vehicle:
-  = @crime_tip.vehicle
-%p
-  %b License plate:
-  = @crime_tip.license_plate
-%p
-  %b Drug:
-  = @crime_tip.drug.name unless @crime_tip.drug.nil?
-%p
-  %b Assigned:
-  = @crime_tip.assign.team unless @crime_tip.assign.nil?
-%p
-  %b Date assigned:
-  = @crime_tip.date_assigned
-%p
-  %b Date completed:
-  = @crime_tip.date_completed
-%p
-  %b Charges:
-  = @crime_tip.charges
-%p
-  %b Urn:
-  = @crime_tip.urn
-%p
-  %b Clearance:
-  = @crime_tip.clearance
-%p
-  %b Side notes:
-  = @crime_tip.side_notes
-%p
-  %b Search warrant:
-  = @crime_tip.search_warrant ? 'Yes' : 'No'
-%p
-  %b Probation search:
-  = @crime_tip.probation_search ? 'Yes' : 'No'
-%p
-  %b Parole search:
-  = @crime_tip.parole_search ? 'Yes' : 'No'
-%p
-  %b Arrested:
-  = @crime_tip.arrested ? 'Yes' : 'No'
-%p
-  %b Status:
-  = @crime_tip.status_id
-%p
-  %b Suspect 2:
-  = @crime_tip.suspect_2
-%p
-  %b Suspect 3:
-  = @crime_tip.suspect_3
+
+%br
+%ul.tabs{"data-tabs" => "tabs"}
+  %li.active
+    %a{:href => "#home"} Home
+  %li
+    %a{:href => "#location"} Location
+  %li
+    %a{:href => "#informant"} Informant
+  %li
+    %a{:href => "#suspect"} Suspect
+
+#my-tab-content.tab-content
+  #home.active
+    %p
+      %b Date rec:
+      = @crime_tip.date_rec
+    %p
+      %b Date due:
+      = @crime_tip.date_due
+    %p
+      %b Crime:
+      = @crime_tip.crime.name unless @crime_tip.crime.nil?
+    %p
+      %b Assigned:
+      = @crime_tip.assign.team unless @crime_tip.assign.nil?
+    %p
+      %b Date assigned:
+      = @crime_tip.date_assigned
+    %p
+      %b Date completed:
+      = @crime_tip.date_completed
+    %p
+      %b Charges:
+      = @crime_tip.charges
+    %p
+      %b Urn:
+      = @crime_tip.urn
+    %p
+      %b Clearance:
+      = @crime_tip.clearance
+    %p
+      %b Side notes:
+      = @crime_tip.side_notes
+    %p
+      %b Search warrant:
+      = @crime_tip.search_warrant ? 'Yes' : 'No'
+    %p
+      %b Probation search:
+      = @crime_tip.probation_search ? 'Yes' : 'No'
+    %p
+      %b Parole search:
+      = @crime_tip.parole_search ? 'Yes' : 'No'
+    %p
+      %b Arrested:
+      = @crime_tip.arrested ? 'Yes' : 'No'
+    %p
+      %b Status:
+      = @crime_tip.status_id
+  #location
+    %p
+      %b Street number:
+      = @crime_tip.street_number
+    %p
+      %b Street name:
+      = @crime_tip.street_name
+    %p
+      %b Cross street:
+      = @crime_tip.cross_street
+  #informant
+    %p
+      %b Informant name:
+      = @crime_tip.informant_name
+    %p
+      %b Informant phone:
+      = @crime_tip.informant_phone
+    %p
+      %b Informant email:
+      = @crime_tip.informant_email
+  #suspect
+    %p
+      %b Suspect first name:
+      = @crime_tip.suspect_first_name
+    %p
+      %b Suspect last name:
+      = @crime_tip.suspect_last_name
+    %p
+      %b Suspect dob:
+      = @crime_tip.suspect_dob
+    %p
+      %b Suspect age:
+      = @crime_tip.suspect_age
+    %p
+      %b Suspect race:
+      = @crime_tip.suspect_race.name unless @crime_tip.suspect_race.nil?
+    %p
+      %b Suspect gender:
+      = @crime_tip.suspect_gender
+    %p
+      %b Suspect street number:
+      = @crime_tip.suspect_street_number
+    %p
+      %b Suspect street name:
+      = @crime_tip.suspect_street_name
+    %p
+      %b Suspect city:
+      = @crime_tip.suspect_city
+    %p
+      %b Suspect school:
+      = @crime_tip.suspect_school.name unless @crime_tip.suspect_school.nil?
+    %p
+      %b Suspect phone:
+      = @crime_tip.suspect_phone
+    %p
+      %b Suspect cell:
+      = @crime_tip.suspect_cell
+    %p
+      %b Gang:
+      = @crime_tip.gang
+    %p
+      %b Vehicle:
+      = @crime_tip.vehicle
+    %p
+      %b License plate:
+      = @crime_tip.license_plate
+    %p
+      %b Drug:
+      = @crime_tip.drug.name unless @crime_tip.drug.nil?
+    %p
+      %b Suspect 2:
+      = @crime_tip.suspect_2
+    %p
+      %b Suspect 3:
+      = @crime_tip.suspect_3
+%br
+%br
 
 = link_to 'Edit', edit_crime_tip_path(@crime_tip)
 \|
