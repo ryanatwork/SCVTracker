@@ -10,8 +10,8 @@ FactoryGirl.define do
       informant_name  Faker::Name.first_name + ' ' + Faker::Name.last_name
       informant_phone  Faker::PhoneNumber.phone_number
       informant_email  Faker::Internet.email
-      suspect_first_name  Faker::Name.first_name
-      suspect_last_name  Faker::Name.last_name
+      suspect_first_name  "Alex"
+      suspect_last_name  "Smith"
       suspect_dob  Date.new(1950,1,1)
       suspect_age  20
       suspect_race_id  4
