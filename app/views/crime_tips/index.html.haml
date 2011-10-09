@@ -13,7 +13,9 @@
           .input
             = f.collection_select :crime_name_contains, Crime.all, :name, :name, :include_blank => true
         .clearfix
-          = f.label :date_rec, 'Received'
+          = f.label :date_rec, 'Date Received'
+          .input
+            = f.text_field :date_rec_gte
       .span6
         .clearfix
           = f.label :street_number_contains,'Street Number'
