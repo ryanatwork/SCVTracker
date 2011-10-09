@@ -1,4 +1,6 @@
 class CrimeTipsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /crime_tips
   # GET /crime_tips.json
   def index

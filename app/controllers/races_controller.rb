@@ -1,4 +1,5 @@
 class RacesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /races
   # GET /races.json
   def index
