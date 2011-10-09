@@ -44,7 +44,7 @@
   = @crime_tip.suspect_age
 %p
   %b Suspect race:
-  = @crime_tip.suspect_race_id
+  = @crime_tip.race.name unless @crime_tip.race.nil?
 %p
   %b Suspect gender:
   = @crime_tip.suspect_gender
@@ -59,7 +59,7 @@
   = @crime_tip.suspect_city
 %p
   %b Suspect school:
-  = @crime_tip.suspect_school_id
+  = @crime_tip.suspect_school.name unless @crime_tip.suspect_school.nil?
 %p
   %b Suspect phone:
   = @crime_tip.suspect_phone
@@ -77,7 +77,7 @@
   = @crime_tip.license_plate
 %p
   %b Drug:
-  = @crime_tip.drug_id
+  = @crime_tip.drug.name unless @crime_tip.drug.nil?
 %p
   %b Assigned:
   = @crime_tip.assign.team unless @crime_tip.assign.nil?
