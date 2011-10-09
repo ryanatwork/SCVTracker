@@ -261,7 +261,8 @@ puts "adding 100 crime tips"
       :arrested => [0,1].shuffle,
       :status => ['Open','Closed'].shuffle[0],
       :suspect_2 => Faker::Name.first_name,
-      :suspect_3 => Faker::Name.last_name
+      :suspect_3 => Faker::Name.last_name,
+      :city => Faker::Address.city
   )
   }
 
