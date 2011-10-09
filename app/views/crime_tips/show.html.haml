@@ -79,8 +79,8 @@
   %b Drug:
   = @crime_tip.drug_id
 %p
-  %b Team:
-  = @crime_tip.team_id
+  %b Assigned:
+  = @crime_tip.assign.team unless @crime_tip.assign.nil?
 %p
   %b Date assigned:
   = @crime_tip.date_assigned

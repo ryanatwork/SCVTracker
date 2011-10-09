@@ -33,7 +33,7 @@
     %th Location
     %th Cross street
     %th Suspect Name
-    %th Team
+    %th Assigned
     %th
     %th
     %th
@@ -46,7 +46,7 @@
       %td= crime_tip.street_number + ' '+  crime_tip.street_name
       %td= crime_tip.cross_street
       %td= crime_tip.suspect_first_name + ' ' + crime_tip.suspect_last_name
-      %td= crime_tip.team_id
+      %td= crime_tip.assign.team unless crime_tip.assign.nil?
       %td= link_to 'Show', crime_tip
       %td= link_to 'Edit', edit_crime_tip_path(crime_tip)
       %td= link_to 'Destroy', crime_tip, :confirm => 'Are you sure?', :method => :delete

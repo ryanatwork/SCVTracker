@@ -111,9 +111,9 @@
       .input
         = select(:crime_tip, :drug_id, Drug.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
     .clearfix
-      = f.label :team_id
+      = f.label :assign_id
       .input
-        = f.number_field :team_id
+        = select(:crime_tip, :assign_id, Assign.all.collect {|p| [p.team, p.id]}, {:include_blank => true})
     .clearfix
       = f.label :date_assigned
       .input
