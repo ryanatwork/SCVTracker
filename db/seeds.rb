@@ -223,8 +223,8 @@ puts "adding 100 crime tips"
   100.times {
     CrimeTip.create(
       :tip_number => Faker::Address.zip_code,
-      :date_rec => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2011,12,31))),
-      :date_due => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :date_rec => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2012,12,31))),
+      :date_due => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2012,12,31))),
       :crime_id => Random.rand(5),
       :street_number => Faker::Address.zip_code,
       :street_name => Faker::Address.street_name,
@@ -249,8 +249,8 @@ puts "adding 100 crime tips"
       :license_plate => Faker::Name.first_name,
       :drug_id => Random.rand(10),
       :assign_id => Random.rand(10),
-      :date_assigned => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
-      :date_completed => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
+      :date_assigned => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2012,12,31))),
+      :date_completed => Time.at(Time.local(2011,1,1) + rand * (Time.now - Time.local(2012,12,31))),
       :charges => Faker::Company.bs,
       :urn => Faker::Company.bs,
       :clearance => Faker::Lorem.paragraph,
