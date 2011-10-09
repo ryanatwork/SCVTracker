@@ -147,6 +147,30 @@ puts "Charge"
   Charge.find_or_create_by_name(attributes)
 end
 
+puts "Assign"
+[
+  {:team =>"60f"},
+  {:team =>"CIT"},
+  {:team =>"D.B."},
+  {:team =>"J-Team"},
+  {:team =>"Narco"},
+  {:team =>"Off Road Team"},
+  {:team =>"Other"},
+  {:team =>"Patrol"},
+  {:team =>"SRD"},
+  {:team =>"Traffic"},
+  {:team =>"Zone 1"},
+  {:team =>"Zone 2"},
+  {:team =>"Zone 3"},
+  {:team =>"Zone 4"},
+  {:team =>"Zone 5"},
+  {:team =>"Zone 6"},
+  {:team =>"Zone 7"},
+  {:team =>"Zone 8"},
+].each do |attributes|
+  Assign.find_or_create_by_team(attributes)
+end
+
 #Load Development Seed data
 if Rails.env != 'production'
 require 'faker'
