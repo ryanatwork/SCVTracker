@@ -11,7 +11,7 @@
   = @crime_tip.date_due
 %p
   %b Crime:
-  = @crime_tip.crime_id
+  = @crime_tip.crime.name unless @crime_tip.crime.nil?
 %p
   %b Street number:
   = @crime_tip.street_number

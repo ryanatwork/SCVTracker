@@ -18,7 +18,7 @@
     .clearfix
       = f.label :crime_id
       .input
-        = f.number_field :crime_id
+        = select(:crime_tip, :crime_id, Crime.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
     .clearfix
       = f.label :street_number
       .input
