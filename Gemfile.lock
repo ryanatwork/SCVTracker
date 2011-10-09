@@ -28,6 +28,7 @@ GEM
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.0.2)
+    active_link_to (1.0.0)
     activemodel (3.1.1)
       activesupport (= 3.1.1)
       builder (~> 3.0.0)
@@ -190,6 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   ZenTest
+  active_link_to
   coffee-rails (~> 3.1.0)
   devise
   factory_girl_rails

@@ -5,14 +5,12 @@
         %h3
           = link_to 'SCV Sheriff', root_path
         %ul.nav
-          %li.active
-            = link_to 'Home', home_index_path
           %li
-            = link_to 'Students', students_path
+            = active_link_to 'Home', home_index_path, :wrap_tag => :li
           %li
-            = link_to 'Crime Tips', crime_tips_path
+            = active_link_to 'Students', students_path, :wrap_tag => :li
           %li
-            %a{:href => "#"} Link
+            = active_link_to 'Crime Tips', crime_tips_path, :wrap_tag => :li
           %ul{:class => "nav secondary-nav"}
             %li.dropdown
               - if user_signed_in?

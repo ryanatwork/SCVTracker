@@ -10,6 +10,7 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'active_link_to'
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
