@@ -38,7 +38,7 @@
   - @crime_tips.each do |crime_tip|
     %tr
       %td= crime_tip.tip_number
-      %td= crime_tip.date_rec
+      %td= crime_tip.date_rec.strftime("%m/%d/%Y") unless crime_tip.date_rec.nil?
       %td= crime_tip.crime.name unless crime_tip.crime.nil?
       %td= crime_tip.street_number + ' '+  crime_tip.street_name
       %td= crime_tip.cross_street
