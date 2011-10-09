@@ -1,4 +1,5 @@
 class CrimeTip < ActiveRecord::Base
+  belongs_to :assign
   belongs_to :crime
   belongs_to :drug
   belongs_to :race
