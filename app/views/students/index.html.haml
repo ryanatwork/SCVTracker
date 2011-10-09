@@ -7,32 +7,20 @@
         .clearfix
           = f.label :first_name_contains, 'First name'
           .input
-            - if params[:search].nil?
-              = f.text_field :first_name_contains
-            - else
-              = f.text_field :first_name_contains, :value => params[:search][:first_name_contains]
+            = f.text_field :first_name_contains
         .clearfix
           = f.label :last_name_contains, 'Last name'
           .input
-            - if params[:search].nil?
-              = f.text_field :last_name_contains
-            - else
-              = f.text_field :last_name_contains, :value => params[:search][:last_name_contains]
+            = f.text_field :last_name_contains
         .clearfix
           = f.label :gang, 'Gang'
           .input
-            - if params[:search].nil?
-              = f.text_field :gang_contains
-            - else
-              = f.text_field :gang_contains, :value => params[:search][:gang_contains]
+            = f.text_field :gang_contains
       .span6
         .clearfix
           = f.label :moniker,'Moniker'
           .input
-            - if params[:search].nil?
-              = f.text_field :moniker_contains
-            - else
-              = f.text_field :moniker_contains, :value => params[:search][:moniker_contains]
+            = f.text_field :moniker_contains
         .clearfix
           = f.label :school_id, 'School'
           .input
