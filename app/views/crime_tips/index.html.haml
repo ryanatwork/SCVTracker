@@ -51,6 +51,7 @@
       %td= link_to 'Edit', edit_crime_tip_path(crime_tip)
       %td= link_to 'Destroy', crime_tip, :confirm => 'Are you sure?', :method => :delete
 
+= will_paginate @crime_tips
 %br
 
 = link_to 'New Crime tip', new_crime_tip_path

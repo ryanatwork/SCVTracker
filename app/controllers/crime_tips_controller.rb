@@ -3,7 +3,7 @@ class CrimeTipsController < ApplicationController
   # GET /crime_tips.json
   def index
     @search = CrimeTip.search(params[:search])
-    @crime_tips = CrimeTip.all
+    @crime_tips = @search.paginate(:per_page => 25, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
