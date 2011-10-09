@@ -9,9 +9,9 @@
           .input
             = f.text_field :tip_number_contains
         .clearfix
-          = f.label :crime_id_contains, 'Crime Type'
+          = f.label :crime_name_contains, 'Crime Type'
           .input
-            = text_field_tag 'crime_id'
+            = f.collection_select :crime_name_contains, Crime.all, :name, :name, :include_blank => true
         .clearfix
           = f.label :date_rec, 'Received'
       .span6
@@ -19,6 +19,10 @@
           = f.label :street_number_contains,'Street Number'
           .input
             = f.text_field :street_number_contains
+        .clearfix
+          = f.label :street_name_contains, 'Street Name'
+          .input
+            = f.text_field :street_name_contains
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
 
