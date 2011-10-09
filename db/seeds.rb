@@ -86,6 +86,27 @@ puts "Risk Status"
   RiskFactor.find_or_create_by_status(attributes)
 end
 
+puts "Crime Type"
+[
+  {:name => "415E"},
+  {:name => "Arson"},
+  {:name => "Burglary"},
+  {:name => "Child Abuse"},
+  {:name => "Chop Shop"},
+  {:name => "Cruelty to Animals"},
+  {:name => "Fraud"},
+  {:name => "Mail Theft"},
+  {:name => "Narco"},
+  {:name => "Other"},
+  {:name => "Prostitution"},
+  {:name => "Suspicious Activity"},
+  {:name => "Traffic Issues"},
+  {:name => "Trespassing"},
+  {:name => "Wanted Person"},
+  {:name => "Weapons"},
+].each do |attributes|
+  Crime.find_or_create_by_name(attributes)
+end
 #Load Development Seed data
 if Rails.env != 'production'
 require 'faker'
