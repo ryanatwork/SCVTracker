@@ -19,10 +19,10 @@
   #home.active
     %p
       %b Date rec:
-      = @crime_tip.date_rec
+      = @crime_tip.date_rec.strftime("%m/%d/%Y") unless @crime_tip.date_rec.nil?
     %p
       %b Date due:
-      = @crime_tip.date_due
+      = @crime_tip.date_due.strftime("%m/%d/%Y") unless @crime_tip.date_due.nil?
     %p
       %b Crime:
       = @crime_tip.crime.name unless @crime_tip.crime.nil?
@@ -31,10 +31,10 @@
       = @crime_tip.assign.team unless @crime_tip.assign.nil?
     %p
       %b Date assigned:
-      = @crime_tip.date_assigned
+      = @crime_tip.date_assigned.strftime("%m/%d/%Y") unless @crime_tip.date_assigned.nil?
     %p
       %b Date completed:
-      = @crime_tip.date_completed
+      = @crime_tip.date_completed.strftime("%m/%d/%Y") unless @crime_tip.date_completed.nil?
     %p
       %b Charges:
       = @crime_tip.charges
