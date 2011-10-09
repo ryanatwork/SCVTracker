@@ -9,14 +9,14 @@
 
   %body{:style => 'padding-top: 40px;'}
     = render 'layouts/nav'
-    %p.notice
-      = notice
-    %p.alert
-      = alert
     .container-fluid
       .sidebar
-        Hi...
+
       .content
+        %p.notice
+          = notice
+        %p.alert
+          = alert
         = yield
 
     #footer{:style => 'padding-bottom: 20px;'}
