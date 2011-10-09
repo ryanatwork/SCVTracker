@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007023849) do
+ActiveRecord::Schema.define(:version => 20111009000137) do
 
   create_table "crime_tips", :force => true do |t|
     t.date     "date_rec"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20111007023849) do
     t.string   "suspect_3"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tip_number"
   end
 
   create_table "crimes", :force => true do |t|
