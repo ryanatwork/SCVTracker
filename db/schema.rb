@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009215856) do
+ActiveRecord::Schema.define(:version => 20111009224409) do
 
   create_table "assigns", :force => true do |t|
     t.string   "team"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20111009215856) do
     t.string   "tip_number"
     t.integer  "assign_id"
     t.string   "status"
+    t.string   "city"
   end
 
   create_table "crimes", :force => true do |t|
