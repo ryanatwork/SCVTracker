@@ -248,7 +248,7 @@ puts "adding 100 crime tips"
       :vehicle => Faker::Name.last_name,
       :license_plate => Faker::Name.first_name,
       :drug_id => Random.rand(10),
-      :team_id => Random.rand(10),
+      :assign_id => Random.rand(10),
       :date_assigned => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
       :date_completed => Time.at(Time.local(1950,1,1) + rand * (Time.now - Time.local(2011,12,31))),
       :charges => Faker::Company.bs,
