@@ -40,5 +40,6 @@ FactoryGirl.define do
       status  "Open"
       suspect_2  Faker::Name.first_name
       suspect_3  Faker::Name.last_name
+      city Faker::Address.city
   end
 end
