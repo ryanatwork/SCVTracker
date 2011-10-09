@@ -28,10 +28,9 @@
 %table
   %tr
     %th Tip Number
-    %th Date rec
+    %th Date Received
     %th Crime
-    %th Street number
-    %th Street name
+    %th Location
     %th Cross street
     %th Suspect Name
     %th Team
@@ -41,11 +40,10 @@
 
   - @crime_tips.each do |crime_tip|
     %tr
-      %td Tip Number
+      %td= crime_tip.tip_number
       %td= crime_tip.date_rec
       %td= crime_tip.crime_id
-      %td= crime_tip.street_number
-      %td= crime_tip.street_name
+      %td= crime_tip.street_number + ' '+  crime_tip.street_name
       %td= crime_tip.cross_street
       %td= crime_tip.suspect_first_name + ' ' + crime_tip.suspect_last_name
       %td= crime_tip.team_id
