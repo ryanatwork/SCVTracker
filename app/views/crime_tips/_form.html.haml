@@ -155,9 +155,9 @@
       .input
         = f.check_box :arrested
     .clearfix
-      = f.label :status_id
+      = f.label :status
       .input
-        = f.number_field :status_id
+        = select(:crime_tip, :status, options_for_select([['Open', 'Open'],['Closed', 'Closed']]))
     .clearfix
       = f.label :suspect_2
       .input
