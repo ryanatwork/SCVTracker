@@ -259,7 +259,7 @@ puts "adding 100 crime tips"
       :probation_search => [0,1].shuffle,
       :parole_search => [0,1].shuffle,
       :arrested => [0,1].shuffle,
-      :status_id => Random.rand(3),
+      :status_ => ['Open','Closed'].shuffle[0],
       :suspect_2 => Faker::Name.first_name,
       :suspect_3 => Faker::Name.last_name
   )
