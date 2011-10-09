@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe RacesController do
 
+  login_user
+
+  it "should have a current_user" do
+    subject.current_user.should_not be_nil
+  end
+
+
   describe "#index" do
     it "should render the index template" do
       get :index
