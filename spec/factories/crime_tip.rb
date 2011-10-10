@@ -4,8 +4,8 @@ FactoryGirl.define do
       date_rec Date.new(2011,1,2)
       date_due  Date.new(2011,1,10)
       crime_id  Random.rand(5)
-      street_number  Faker::Address.zip_code
-      street_name  Faker::Address.street_name
+      street_number  "23920"
+      street_name  "Valencia blvd"
       cross_street Faker::Address.street_name
       informant_name  Faker::Name.first_name + ' ' + Faker::Name.last_name
       informant_phone  Faker::PhoneNumber.phone_number
@@ -40,6 +40,6 @@ FactoryGirl.define do
       status  "Open"
       suspect_2  Faker::Name.first_name
       suspect_3  Faker::Name.last_name
-      city Faker::Address.city
+      city "Santa Clarita"
   end
 end
