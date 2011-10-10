@@ -94,7 +94,7 @@
       = @crime_tip.suspect_last_name.upcase
     %p
       %b Suspect dob:
-      = @crime_tip.suspect_dob
+      = @crime_tip.suspect_dob.strftime("%m/%d/%Y") unless @crime_tip.suspect_dob.nil?
     %p
       %b Suspect age:
       = @crime_tip.suspect_age
