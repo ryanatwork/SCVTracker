@@ -31,7 +31,7 @@
             = f.collection_select :risk_factor_status_contains, RiskFactor.all, :status, :status, :include_blank => true
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
-%table#students_table.zebra-striped
+%table#StudentsTable.zebra-striped
   %thead
     %tr
       %th First name
