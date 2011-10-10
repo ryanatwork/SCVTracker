@@ -12,6 +12,7 @@ end
 
 gem 'active_link_to'
 gem 'devise'
+gem 'geocoder'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'meta_search'
