@@ -6,7 +6,7 @@ class CrimeTip < ActiveRecord::Base
   belongs_to :suspect_school, :class_name => "School", :foreign_key => "suspect_school_id"
 
   geocoded_by :location
-  after_validation :geocode
+  after_validation :geocode,:if => :street_number_changed? or :street_name_changed?
 
 
   def suspect_name
