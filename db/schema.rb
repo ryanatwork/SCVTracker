@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111010001638) do
+ActiveRecord::Schema.define(:version => 20111011060228) do
 
   create_table "assigns", :force => true do |t|
     t.string   "team"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20111010001638) do
 
   create_table "charges", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "crime_tip_files", :force => true do |t|
+    t.string   "crime_tip_file_name"
+    t.string   "crime_tip_content_type"
+    t.integer  "crime_tip_file_size"
+    t.date     "crime_tip_updated_at"
+    t.integer  "crime_tip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
