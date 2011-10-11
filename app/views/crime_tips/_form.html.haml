@@ -99,6 +99,14 @@
       .input
         = f.text_field :suspect_cell
     .clearfix
+      = f.label :suspect_2
+      .input
+        = f.text_field :suspect_2
+    .clearfix
+      = f.label :suspect_3
+      .input
+        = f.text_field :suspect_3
+    .clearfix
       = f.label :gang
       .input
         = f.text_field :gang
@@ -162,13 +170,5 @@
       = f.label :status
       .input
         = select(:crime_tip, :status, options_for_select([['Open', 'Open'],['Closed', 'Closed']]))
-    .clearfix
-      = f.label :suspect_2
-      .input
-        = f.text_field :suspect_2
-    .clearfix
-      = f.label :suspect_3
-      .input
-        = f.text_field :suspect_3
     .actions
       = f.submit 'Save', {:class => "btn primary"}
