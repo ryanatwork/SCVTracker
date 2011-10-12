@@ -29,7 +29,7 @@ class CrimeTipsController < ApplicationController
   def new
     @crime_tip = CrimeTip.new
 
-    1.times { @crime_tip.crime_tip_files.build }
+    1.times { @crime_tip.tip_files.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,7 @@ class CrimeTipsController < ApplicationController
   # GET /crime_tips/1/edit
   def edit
     @crime_tip = CrimeTip.find(params[:id])
-    1.times { @crime_tip.crime_tip_files.build }
+    1.times { @crime_tip.tip_files.build }
   end
 
   # POST /crime_tips

@@ -171,9 +171,16 @@
       .input
         = select(:crime_tip, :status, options_for_select([['Open', 'Open'],['Closed', 'Closed']]))
     .clearfix
-      = f.fields_for :crime_tip_files do |file_fields|
+      = f.fields_for :tip_files do |file_fields|
+        &nbsp;
         - if file_fields.object.new_record?
           .input
-            = file_fields.file_field :crime_tip_files
+            = file_fields.file_field :tip
+    .clearfix
+      = f.fields_for :tip_files do |file_fields|
+        - unless file_fields.object.new_record?
+          .input
+            = link_to image_tag(file_fields.object.tip.url(:original)), file_fields.object.tip.url(:original)
+            = file_fields.check_box :_destroy
     .actions
       = f.submit 'Save', {:class => "btn primary"}
