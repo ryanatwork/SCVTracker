@@ -7,6 +7,8 @@ class CrimeTip < ActiveRecord::Base
 
   has_many :crime_tip_files
 
+  accepts_nested_attributes_for :crime_tip_files, :allow_destroy => true
+
   geocoded_by :location
   after_validation :geocode,:if => :street_number_changed? or :street_name_changed?
 
