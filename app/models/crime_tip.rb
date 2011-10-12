@@ -5,6 +5,8 @@ class CrimeTip < ActiveRecord::Base
   belongs_to :suspect_race, :class_name => "Race", :foreign_key => "suspect_race_id"
   belongs_to :suspect_school, :class_name => "School", :foreign_key => "suspect_school_id"
 
+  has_many :crime_tip_files
+
   geocoded_by :location
   after_validation :geocode,:if => :street_number_changed? or :street_name_changed?
 
