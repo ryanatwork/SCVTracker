@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011060228) do
+ActiveRecord::Schema.define(:version => 20111012060534) do
 
   create_table "assigns", :force => true do |t|
     t.string   "team"
@@ -167,6 +167,16 @@ ActiveRecord::Schema.define(:version => 20111011060228) do
 
   create_table "teams", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tip_files", :force => true do |t|
+    t.string   "tip_file_name"
+    t.string   "tip_content_type"
+    t.integer  "tip_file_size"
+    t.datetime "tip_updated_at"
+    t.integer  "crime_tip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
