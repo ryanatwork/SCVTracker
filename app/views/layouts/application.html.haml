@@ -11,10 +11,13 @@
     = render 'layouts/nav'
     .container-fluid
       .sidebar
-
-      .content
-        %p.notice
-          = notice
+      .content{:style => 'padding-top: 10px'}
+        - unless notice.blank?
+          .div{:class => 'alert-message warning fade in', 'data-alert' => 'alert'}
+            %a.close{:href => '#'} x
+            %p
+              %strong
+                = notice
         %p.alert
           = alert
         = yield
