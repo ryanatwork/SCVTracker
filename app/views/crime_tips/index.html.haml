@@ -62,7 +62,7 @@
       %th Date Received
       %th Crime
       %th Location
-      %th Cross street
+      %th Zone
       %th Suspect Name
       %th Assigned
       %th
@@ -75,7 +75,7 @@
       %td= crime_tip.date_rec.strftime("%m/%d/%Y") unless crime_tip.date_rec.nil?
       %td= crime_tip.crime.name unless crime_tip.crime.nil?
       %td= crime_tip.street_number + ' '+  crime_tip.street_name
-      %td= crime_tip.cross_street
+      %td= crime_tip.zone.name unless crime_tip.zone.nil?
       %td= crime_tip.suspect_name.upcase
       %td= crime_tip.assign.team unless crime_tip.assign.nil?
       %td= link_to 'Show', crime_tip
