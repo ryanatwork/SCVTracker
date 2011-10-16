@@ -77,7 +77,9 @@
       = @crime_tip.city
     - unless @crime_tip.latitude.nil? || @crime_tip.longitude.nil?
       = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@crime_tip.latitude}%2C#{@crime_tip.longitude}"
-
+    %p
+      %b Zone:
+      = @crime_tip.zone.name unless @crime_tip.zone.nil?
   #informant
     %p
       %b Informant name:
