@@ -4,16 +4,16 @@
       .container
         %h3
           = link_to 'SCV Sheriff', root_path
-        %ul.nav
-          %li
-            = active_link_to 'Home', home_index_path, :wrap_tag => :li
-          %li
-            = active_link_to 'Students', students_path, :wrap_tag => :li
-          %li
-            = active_link_to 'Crime Tips', crime_tips_path, :wrap_tag => :li
-          %ul{:class => "nav secondary-nav"}
-            %li.dropdown
-              - if user_signed_in?
+        - if user_signed_in?
+          %ul.nav
+            %li
+              = active_link_to 'Home', home_index_path, :wrap_tag => :li
+            %li
+              = active_link_to 'Students', students_path, :wrap_tag => :li
+            %li
+              = active_link_to 'Crime Tips', crime_tips_path, :wrap_tag => :li
+            %ul{:class => "nav secondary-nav"}
+              %li.dropdown
                 = link_to 'User', '#', {:class => 'dropdown-toggle'}
                 %ul.dropdown-menu
                   %li
@@ -21,4 +21,7 @@
                   %li.divider
                   %li
                     = link_to('Logout', destroy_user_session_path, :method => :delete)
-
+          - else
+            %ul.nav
+              %li
+                = link_to 'Sign In', home_index_path
