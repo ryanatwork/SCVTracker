@@ -1,5 +1,7 @@
 class CrimeTipsController < ApplicationController
   before_filter :authenticate_user!
+  autocomplete :charge, :name
+
 
   # GET /crime_tips
   # GET /crime_tips.json
