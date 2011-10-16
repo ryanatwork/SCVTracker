@@ -29,7 +29,7 @@ FactoryGirl.define do
       assign_id  2
       date_assigned  Date.new(2011,1,10)
       date_completed  Date.new(2011,12,10)
-      charges  Faker::Company.bs
+      charge_list  Faker::Company.bs
       urn  Faker::Company.bs
       clearance  Faker::Lorem.paragraph
       side_notes  Faker::Lorem.paragraph
