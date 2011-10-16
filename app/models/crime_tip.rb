@@ -12,6 +12,8 @@ class CrimeTip < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode,:if => :street_number_changed? or :street_name_changed?
 
+  acts_as_taggable_on :charges
+
 
   def suspect_name
     suspect_name = self.suspect_first_name + ' ' + self.suspect_last_name
