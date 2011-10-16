@@ -37,7 +37,7 @@
       = @crime_tip.date_completed.strftime("%m/%d/%Y") unless @crime_tip.date_completed.nil?
     %p
       %b Charges:
-      = @crime_tip.charges
+      = @crime_tip.charge_list
     %p
       %b Urn:
       = @crime_tip.urn
