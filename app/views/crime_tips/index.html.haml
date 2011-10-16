@@ -50,7 +50,10 @@
           = f.label :status_contains, 'Status'
           .input
             = f.select(:status_contains, options_for_select([['Open', 'Open'],['Closed', 'Closed']]), :include_blank => true )
-
+        .clearfix
+          = f.label :zone_name_contains, 'Zone'
+          .input
+            = f.collection_select :zone_name_contains, Zone.all, :name, :name, :include_blank => true
 
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
