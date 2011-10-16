@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'meta_search'
 gem "paperclip", "~> 2.4"
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails3-jquery-autocomplete'
 gem 'will_paginate'
 
 group :development do
