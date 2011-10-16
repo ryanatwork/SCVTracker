@@ -141,7 +141,7 @@
     .clearfix
       = f.label :charges
       .input
-        = f.text_field :charge_list
+        = f.autocomplete_field :charge_list, autocomplete_charge_name_crime_tips_path, :"data-delimiter" => ', '
     .clearfix
       = f.label :urn
       .input
