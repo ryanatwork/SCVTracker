@@ -12,14 +12,19 @@
     .container-fluid
       .sidebar
       .content{:style => 'padding-top: 10px'}
-        - unless notice.blank?
+        - if flash[:notice]
           .div{:class => 'alert-message success fade in', 'data-alert' => 'alert'}
             %a.close{:href => '#'} x
             %p
               %strong
                 = notice
-        %p.alert
-          = alert
+        - if flash[:alert]
+          .div{:class => 'alert-message info fade in', 'data-alert' => 'alert'}
+            %a.close{:href => '#'} x
+            %p
+              %strong
+                = alert
+
         = yield
 
     #footer{:style => 'padding-bottom: 20px;'}
