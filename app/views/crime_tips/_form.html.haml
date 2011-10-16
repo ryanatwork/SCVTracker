@@ -180,7 +180,7 @@
       = f.fields_for :tip_files do |file_fields|
         - unless file_fields.object.new_record?
           .input
-            = link_to image_tag(file_fields.object.tip.url(:original)), file_fields.object.tip.url(:original)
+            = link_to file_fields.object.tip_file_name, file_fields.object.tip.url(:original)
             = file_fields.check_box :_destroy
     .actions
       = f.submit 'Save', {:class => "btn primary"}
