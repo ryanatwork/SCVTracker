@@ -40,6 +40,10 @@
       .input
         = f.text_field :city
     .clearfix
+      = f.label :zone
+      .input
+        = select(:crime_tip, :zone_id, Zone.all.collect {|p| [p.name, p.id]}, {:include_blank => true})
+    .clearfix
       = f.label :informant_name
       .input
         = f.text_field :informant_name
