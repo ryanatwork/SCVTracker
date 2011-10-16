@@ -26,7 +26,7 @@ describe "crime_tips/new.html.haml" do
       :license_plate => "MyString",
       :drug_id => 1,
       :team_id => 1,
-      :charges => "MyString",
+      :charge_list => "MyString",
       :urn => "MyString",
       :clearance => "MyText",
       :side_notes => "MyText",
@@ -66,7 +66,7 @@ describe "crime_tips/new.html.haml" do
       assert_select "input#crime_tip_vehicle", :name => "crime_tip[vehicle]"
       assert_select "input#crime_tip_license_plate", :name => "crime_tip[license_plate]"
       assert_select "select#crime_tip_drug_id", :name => "crime_tip[drug_id]"
-      assert_select "input#crime_tip_charges", :name => "crime_tip[charges]"
+      assert_select "input#crime_tip_charge_list", :name => "crime_tip[charge_list]"
       assert_select "input#crime_tip_urn", :name => "crime_tip[urn]"
       assert_select "textarea#crime_tip_clearance", :name => "crime_tip[clearance]"
       assert_select "textarea#crime_tip_side_notes", :name => "crime_tip[side_notes]"
