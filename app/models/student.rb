@@ -11,6 +11,8 @@ class Student < ActiveRecord::Base
                     :default_url => 'default_student.jpg'
                     #:default_url => 'missing_:style.png'
 
+  validates_presence_of :first_name
+
   def age(dob, now = Time.now.utc.to_date)
     now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   end
