@@ -2,14 +2,13 @@ require 'spec_helper'
 
 describe CrimeTipsController do
 
- login_user
+  login_user
 
- before(:each) do
-   stub_request(:get, "http://maps.googleapis.com/maps/api/geocode/json?address=23920%20Valencia%20blvd%20Santa%20Clarita&language=en&sensor=false").
+  before(:each) do
+    stub_request(:get, "http://maps.googleapis.com/maps/api/geocode/json?address=23920%20Valencia%20blvd%20Santa%20Clarita&language=en&sensor=false").
          with(:headers => {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
          to_return(:status => 200, :body => fixture("city_hall.json"), :headers => {})
- end
-
+  end
 
   it "should have a current_user" do
     subject.current_user.should_not be_nil
