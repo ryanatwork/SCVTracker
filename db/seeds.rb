@@ -159,16 +159,22 @@ puts "Assign"
   {:team =>"Patrol"},
   {:team =>"SRD"},
   {:team =>"Traffic"},
-  {:team =>"Zone 1"},
-  {:team =>"Zone 2"},
-  {:team =>"Zone 3"},
-  {:team =>"Zone 4"},
-  {:team =>"Zone 5"},
-  {:team =>"Zone 6"},
-  {:team =>"Zone 7"},
-  {:team =>"Zone 8"},
 ].each do |attributes|
   Assign.find_or_create_by_team(attributes)
+end
+
+puts "Zone"
+[
+  {:name =>"Zone 1"},
+  {:name =>"Zone 2"},
+  {:name =>"Zone 3"},
+  {:name =>"Zone 4"},
+  {:name =>"Zone 5"},
+  {:name =>"Zone 6"},
+  {:name =>"Zone 7"},
+  {:name =>"Zone 8"},
+].each do |attributes|
+  Zone.find_or_create_by_name(attributes)
 end
 
 #Load Development Seed data
