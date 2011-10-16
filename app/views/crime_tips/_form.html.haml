@@ -181,6 +181,8 @@
         - unless file_fields.object.new_record?
           .input
             = link_to file_fields.object.tip_file_name, file_fields.object.tip.url(:original)
+            &nbsp;
             = file_fields.check_box :_destroy
+            Remove
     .actions
       = f.submit 'Save', {:class => "btn primary"}
