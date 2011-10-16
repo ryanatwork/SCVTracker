@@ -14,6 +14,8 @@
     %a{:href => "#informant"} Informant
   %li
     %a{:href => "#suspect"} Suspect
+  %li
+    %a{:href => "#files"} Files
 
 #my-tab-content.tab-content
   #home.active
@@ -143,6 +145,13 @@
     %p
       %b Suspect 3:
       = @crime_tip.suspect_3
+  #files
+    - @crime_tip.tip_files.each do |tip_files|
+      %p
+        = image_tag tip_files.tip.url(:thumb)
+        %br
+        = link_to tip_files.tip_file_name, tip_files.tip.url(:original), :target => "_blank"
+
 %br
 %br
 
