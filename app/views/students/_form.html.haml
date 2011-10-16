@@ -1,10 +1,14 @@
 = form_for @student, :html => { :multipart => true } do |f|
-  -if @student.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
-      %ul
-        - @student.errors.full_messages.each do |msg|
-          %li= msg
+  - if @student.errors.any?
+    %div{:class => "alert-message block-message error"}
+      %a.close{:href => "#"} &times;
+      %p
+        %strong
+          = "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
+        %ul
+          - @student.errors.full_messages.each do |msg|
+            %li= msg
+
   .fieldset
     .legend
     .clearfix
