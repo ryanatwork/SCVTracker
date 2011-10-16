@@ -2,7 +2,9 @@ SCVSheriff::Application.routes.draw do
 
   resources :crimes
 
-  resources :crime_tips
+  resources :crime_tips do
+    get :autocomplete_charge_name, :on => :collection
+  end
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
