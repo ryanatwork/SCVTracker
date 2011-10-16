@@ -1,6 +1,6 @@
 class TipFile < ActiveRecord::Base
   belongs_to :crime_tip
-  has_attached_file :tip
+  has_attached_file :tip, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   before_post_process :is_image?
 
