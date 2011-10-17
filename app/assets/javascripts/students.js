@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $("#StudentsTable").tablesorter();
+  $("#studentsTable").tablesorter();
 });

@@ -31,7 +31,7 @@
             = f.collection_select :risk_factor_status_contains, RiskFactor.all, :status, :status, :include_blank => true
     = submit_tag 'Search',:name => nil, :class => "btn primary"
 
-%table#StudentsTable.zebra-striped
+%table#studentsTable.zebra-striped
   %thead
     %tr
       %th First name
@@ -42,17 +42,17 @@
       %th
       %th
       %th
-
-  - @students.each do |student|
-    %tr
-      %td= student.first_name
-      %td= student.last_name
-      %td= student.school.name unless student.school.nil?
-      %td= student.updated_school.name unless student.updated_school.nil?
-      %td= student.grade
-      %td= link_to 'Show', student
-      %td= link_to 'Edit', edit_student_path(student)
-      %td= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete
+  %tbody
+    - @students.each do |student|
+      %tr
+        %td= student.first_name
+        %td= student.last_name
+        %td= student.school.name unless student.school.nil?
+        %td= student.updated_school.name unless student.updated_school.nil?
+        %td= student.grade
+        %td= link_to 'Show', student
+        %td= link_to 'Edit', edit_student_path(student)
+        %td= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete
 
 = will_paginate @students
 %br
