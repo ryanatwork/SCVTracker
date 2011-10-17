@@ -1,20 +1,23 @@
-#         ooooooooo.              o8o  oooo                 .o.             .o8                     o8o              
-#         `888   `Y88.            `"'  `888                .888.           "888                     `"'              
-#          888   .d88'  .oooo.   oooo   888   .oooo.o     .8"888.      .oooo888  ooo. .oo.  .oo.   oooo  ooo. .oo.   
-#          888ooo88P'  `P  )88b  `888   888  d88(  "8    .8' `888.    d88' `888  `888P"Y88bP"Y88b  `888  `888P"Y88b  
-#          888`88b.     .oP"888   888   888  `"Y88b.    .88ooo8888.   888   888   888   888   888   888   888   888  
-#          888  `88b.  d8(  888   888   888  o.  )88b  .8'     `888.  888   888   888   888   888   888   888   888  
-#         o888o  o888o `Y888""8o o888o o888o 8""888P' o88o     o8888o `Y8bod88P" o888o o888o o888o o888o o888o o888o 
+#         ooooooooo.              o8o  oooo                 .o.             .o8                     o8o
+#         `888   `Y88.            `"'  `888                .888.           "888                     `"'
+#          888   .d88'  .oooo.   oooo   888   .oooo.o     .8"888.      .oooo888  ooo. .oo.  .oo.   oooo  ooo. .oo.
+#          888ooo88P'  `P  )88b  `888   888  d88(  "8    .8' `888.    d88' `888  `888P"Y88bP"Y88b  `888  `888P"Y88b
+#          888`88b.     .oP"888   888   888  `"Y88b.    .88ooo8888.   888   888   888   888   888   888   888   888
+#          888  `88b.  d8(  888   888   888  o.  )88b  .8'     `888.  888   888   888   888   888   888   888   888
+#         o888o  o888o `Y888""8o o888o o888o 8""888P' o88o     o8888o `Y8bod88P" o888o o888o o888o o888o o888o o888o
 
 # RailsAdmin config file. Generated on October 06, 2011 19:07
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
-  
+
   config.current_user_method { current_user } # auto-generated
-  
-  config.main_app_name { ['Scv Sheriff', 'Admin'] } # auto-generated
-  
+
+  config.main_app_name { ['SCV Sheriff', 'Admin'] } # auto-generated
+
+  config.authenticate_with do
+     redirect_to root_path unless current_user.try(:admin?)
+  end
   #  ==> Authentication (before_filter)
   # This is run inside the controller instance so you can setup any authentication you need to.
   # By default, the authentication will run via warden if available.
@@ -32,50 +35,50 @@ RailsAdmin.config do |config|
   #     warden.authenticate! :scope => :paranoid
   #   end
   # end
-  
+
   #  ==> Authorization
   # Use cancan https://github.com/ryanb/cancan for authorization:
   # config.authorize_with :cancan
-  
+
   # Or use simple custom authorization rule:
   # config.authorize_with do
   #   redirect_to root_path unless warden.user.is_admin?
   # end
-  
+
   # Use a specific role for ActiveModel's :attr_acessible :attr_protected
   # Default is :default
   # current_user is accessible in the block if you want to make it user specific.
   # config.attr_accessible_role { :default }
-    
+
   #  ==> Global show view settings
   # Display empty fields in show views
   # config.compact_show_view = false
-  
+
   #  ==> Global list view settings
   # Number of default rows per-page:
   # config.default_items_per_page = 50
-  
+
   #  ==> Included models
   # Add all excluded models here:
   # config.excluded_models << [Drug, Race, RiskFactor, School, Student, User]
-  
+
   # Add models here if you want to go 'whitelist mode':
   # config.included_models << [Drug, Race, RiskFactor, School, Student, User]
-  
+
   # Application wide tried label methods for models' instances
   # config.label_methods << [:description] # Default is [:name, :title]
-  
+
   #  ==> Global models configuration
   # config.models do
   #   # Configuration here will affect all included models in all scopes, handle with care!
-  #   
+  #
   #   list do
   #     # Configuration here will affect all included models in list sections (same for show, export, edit, update, create)
-  #     
+  #
   #     fields :name, :other_name do
   #       # Configuration here will affect all fields named [:name, :other_name], in the list section, for all included models
   #     end
-  #     
+  #
   #     fields_of_type :date do
   #       # Configuration here will affect all date fields, in the list section, for all included models. See README for a comprehensive type list.
   #     end
@@ -83,9 +86,9 @@ RailsAdmin.config do |config|
   # end
   #
   #  ==> Model specific configuration
-  # Keep in mind that *all* configuration blocks are optional. 
-  # RailsAdmin will try his best to provide the best defaults for each section, for each field! 
-  # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead. 
+  # Keep in mind that *all* configuration blocks are optional.
+  # RailsAdmin will try his best to provide the best defaults for each section, for each field!
+  # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead.
   # Less code is better code!
   # config.model MyModel do
   #   # Here goes your cross-section field configuration for ModelName.
@@ -119,8 +122,8 @@ RailsAdmin.config do |config|
   #     # Here goes the fields configuration for the update view, overriding edit section settings
   #   end
   # end
-  
-# fields configuration is described in the Readme, if you have other question, ask us on the mailing-list! 
+
+# fields configuration is described in the Readme, if you have other question, ask us on the mailing-list!
 
 #  ==> Your models configuration, to help you get started!
 
@@ -135,14 +138,14 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model Drug do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :students, :has_many_association
   #   # Found columns:
   #   field :id, :integer
   #   field :name, :string
   #   field :created_at, :datetime
   #   field :updated_at, :datetime
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -162,14 +165,14 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model Race do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :students, :has_many_association
   #   # Found columns:
   #   field :id, :integer
   #   field :name, :string
   #   field :created_at, :datetime
   #   field :updated_at, :datetime
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -189,14 +192,14 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model RiskFactor do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :students, :has_many_association
   #   # Found columns:
   #   field :id, :integer
   #   field :status, :string
   #   field :created_at, :datetime
   #   field :updated_at, :datetime
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -216,14 +219,14 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model School do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :students, :has_many_association
   #   # Found columns:
   #   field :id, :integer
   #   field :name, :string
   #   field :created_at, :datetime
   #   field :updated_at, :datetime
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -243,7 +246,7 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model Student do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :drug, :belongs_to_association
   #   field :race, :belongs_to_association
   #   field :school, :belongs_to_association
@@ -289,7 +292,7 @@ RailsAdmin.config do |config|
   #   field :photo_file_size, :integer        # Hidden
   #   field :photo_updated_at, :datetime        # Hidden
   #   field :photo, :paperclip_file
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
@@ -309,7 +312,7 @@ RailsAdmin.config do |config|
 # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
 
   # config.model User do
-  #   # Found associations: 
+  #   # Found associations:
   #   field :students, :has_many_association
   #   # Found columns:
   #   field :id, :integer
@@ -330,7 +333,7 @@ RailsAdmin.config do |config|
   #   field :last_name, :string
   #   field :school_deputy, :boolean
   #   field :tip_deputy, :boolean
-  #   # Sections: 
+  #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end
