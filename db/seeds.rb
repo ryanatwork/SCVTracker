@@ -185,7 +185,7 @@ require 'factory_girl_rails'
 puts "adding 10 users"
   10.times {
     user = Factory(:user, :first_name => Faker::Name.first_name,:last_name => Faker::Name.last_name,
-                   :school_deputy => Random.rand(2), :tip_deputy => Random.rand(2))
+                   :school_deputy => Random.rand(2), :tip_deputy => Random.rand(2), :admin => Random.rand(2))
     puts "Added #{user.email}"
     }
 
