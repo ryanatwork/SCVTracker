@@ -3,6 +3,8 @@
 %h2
   = "Welcome #{current_user.first_name + ' ' + current_user.last_name}"
 
+%div{:style => 'min-height:400px;'}
+
 - if current_user.school_deputy
   %h3 Current Assigned Students
   %table
@@ -26,5 +28,4 @@
         %td= link_to 'Edit', edit_student_path(student)
   = will_paginate @students
 
-= link_to('Account Settings', edit_user_registration_path)
 
