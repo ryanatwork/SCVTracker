@@ -1,2 +1,11 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.hero-unit
+  %br
+  .row
+    .span8
+      %h1 Welcome
+      %h2 Santa Clarita Valley Sheriff Station
+      %br
+      %p
+        = link_to 'Sign In »', home_index_path, :class => "btn primary large"
+    .span3
+      = image_tag 'lasd_header.png'
