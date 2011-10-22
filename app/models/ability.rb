@@ -6,10 +6,12 @@ class Ability
 
     if user.has_role? :admin
       can :manage, :all
+    elsif user.has_role? :super_admin
+      can :manage, [CrimeTip, Student]
     elsif user.has_role? :student_team
       can :manage, [Student]
     elsif user.has_role? :crime_tips_team
-      can :manage, [CrimeTips]
+      can :manage, [CrimeTip]
     end
   end
 end
