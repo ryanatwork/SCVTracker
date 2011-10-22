@@ -35,7 +35,7 @@ describe "students/edit.html.haml" do
     ))
   end
 
-  it "renders the edit student form" do
+  pending it "renders the edit student form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
