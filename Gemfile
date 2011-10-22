@@ -12,6 +12,7 @@ end
 
 gem 'active_link_to'
 gem 'acts-as-taggable-on'
+gem 'aws-s3'
 gem 'cancan'
 gem 'devise'
 gem 'geocoder'
