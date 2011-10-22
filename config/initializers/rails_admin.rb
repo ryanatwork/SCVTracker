@@ -15,9 +15,8 @@ RailsAdmin.config do |config|
 
   config.main_app_name { ['SCV Sheriff', 'Admin'] } # auto-generated
 
-  config.authenticate_with do
-     redirect_to root_path unless current_user.try(:admin?)
-  end
+  config.authorize_with :cancan
+
   #  ==> Authentication (before_filter)
   # This is run inside the controller instance so you can setup any authentication you need to.
   # By default, the authentication will run via warden if available.
