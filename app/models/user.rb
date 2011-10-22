@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :students, :class_name => "Student", :foreign_key => "school_deputy_id"
 
+  has_and_belongs_to_many :roles
+
   def name
     self.first_name + ' ' + self.last_name
   end
