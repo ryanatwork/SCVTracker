@@ -133,7 +133,7 @@
     .clearfix
       = f.label :school_deputy_id
       .input
-        = collection_select(:student,:school_deputy_id,User.where(:school_deputy => true), :id, :name, :prompt => true)
+        = collection_select(:student,:school_deputy_id,Role.where(:name => "school_deputy").first.users, :id, :name, :prompt => true)
     .clearfix
       = f.label :photo
       .input
