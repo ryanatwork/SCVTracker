@@ -231,10 +231,10 @@ puts "adding 100 students"
       :programs => Faker::Lorem.paragraph,
       :notes => Faker::Lorem.paragraph,
       :risk_factor_id => Random.rand(3),
-      :school_deputy_id => User.where(:school_deputy => true).map(&:id).shuffle[0]
+      :school_deputy_id => Assignment.where(:role_id => 3).map(&:id).shuffle[0]
     )
   }
-puts User.where(:school_deputy => true).map(&:id)
+puts Assignment.where(:role_id => 3).map(&:id)
 
 puts "adding 100 crime tips"
   100.times {
