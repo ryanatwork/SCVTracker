@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
   def has_role?(role_sym)
       roles.any? { |r| r.name.underscore.to_sym == role_sym }
   end
+
+  def school_deputy
+    has_role?(:student_team)
+  end
+
 end
