@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20111022193009) do
-=======
-ActiveRecord::Schema.define(:version => 20111017024853) do
->>>>>>> parent of a24132d... Added a Roles model
+ActiveRecord::Schema.define(:version => 20111022193435) do
 
   create_table "assigns", :force => true do |t|
     t.string   "team"
@@ -25,16 +21,6 @@ ActiveRecord::Schema.define(:version => 20111017024853) do
 
   create_table "charges", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "crime_tip_files", :force => true do |t|
-    t.string   "crime_tip_file_name"
-    t.string   "crime_tip_content_type"
-    t.integer  "crime_tip_file_size"
-    t.date     "crime_tip_updated_at"
-    t.integer  "crime_tip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,6 +111,17 @@ ActiveRecord::Schema.define(:version => 20111017024853) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "schools", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -185,12 +182,6 @@ ActiveRecord::Schema.define(:version => 20111017024853) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
-  end
-
-  create_table "teams", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "tip_files", :force => true do |t|
