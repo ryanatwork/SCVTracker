@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
       roles.any? { |r| r.name.underscore.to_sym == role_sym }
   end
 
-  def school_deputy
-    has_role?(:student_team)
+  def school_deputy?
+    has_role?(:school_deputy)
   end
 
 end
