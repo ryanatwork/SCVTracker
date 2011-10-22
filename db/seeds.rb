@@ -177,6 +177,16 @@ puts "Zone"
   Zone.find_or_create_by_name(attributes)
 end
 
+puts "Role"
+[
+  {:name => "admin"},
+  {:name => "student_team"},
+  {:name => "crime_tips_team"},
+].each do |attributes|
+  Role.find_or_create_by_name(attributes)
+end
+
+
 #Load Development Seed data
 if Rails.env != 'production'
 require 'faker'
@@ -185,7 +195,8 @@ require 'factory_girl_rails'
 puts "adding 10 users"
   10.times {
     user = Factory(:user, :first_name => Faker::Name.first_name,:last_name => Faker::Name.last_name,
-                   :school_deputy => Random.rand(2), :tip_deputy => Random.rand(2), :admin => Random.rand(2))
+                   :school_deputy => Random.rand(2), :tip_deputy => Random.rand(2), :admin => Random.rand(2)
+                    )
     puts "Added #{user.email}"
     }
 
