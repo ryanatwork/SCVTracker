@@ -181,8 +181,8 @@ puts "Role"
 [
   {:name => "admin"},
   {:name => "super_admin"},
-  {:name => "student_team"},
-  {:name => "crime_tips_team"},
+  {:name => "school_deputy"},
+  {:name => "crime_tip_deputy"},
 ].each do |attributes|
   Role.find_or_create_by_name(attributes)
 end
