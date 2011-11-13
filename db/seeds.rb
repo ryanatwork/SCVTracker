@@ -179,7 +179,6 @@ end
 
 puts "Role"
 [
-  {:name => "admin"},
   {:name => "super_admin"},
   {:name => "school_deputy"},
   {:name => "crime_tip_deputy"},
@@ -196,7 +195,7 @@ require 'factory_girl_rails'
 puts "adding 10 users"
   10.times {
     user = Factory(:user, :first_name => Faker::Name.first_name,:last_name => Faker::Name.last_name)
-    assignment = Assignment.create(:user_id => user.id, :role_id => Random.rand(4) + 1)
+    assignment = Assignment.create(:user_id => user.id, :role_id => Random.rand(3) + 1)
     puts "Added #{user.email}"
     puts "Role #{assignment.role_id}"
     }
