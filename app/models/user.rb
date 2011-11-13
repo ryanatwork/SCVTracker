@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :trackable, :validatable,:timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
   has_many :students, :class_name => "Student", :foreign_key => "school_deputy_id"
 
