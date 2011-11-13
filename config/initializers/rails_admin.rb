@@ -15,8 +15,6 @@ RailsAdmin.config do |config|
 
   config.main_app_name { ['SCV Sheriff', 'Admin'] } # auto-generated
 
-  config.authorize_with :cancan
-
   #  ==> Authentication (before_filter)
   # This is run inside the controller instance so you can setup any authentication you need to.
   # By default, the authentication will run via warden if available.
@@ -24,9 +22,10 @@ RailsAdmin.config do |config|
   # If you use devise, this will authenticate the same as authenticate_user!
   # Example Devise admin
   # RailsAdmin.config do |config|
-  #   config.authenticate_with do
-  #     authenticate_admin!
-  #   end
+     config.authenticate_with do
+       authenticate_user!
+       redirect_to root_path unless current_user.admin?
+     end
   # end
   # Example Custom Warden
   # RailsAdmin.config do |config|
