@@ -7,5 +7,11 @@ describe User do
       test = user.name
       test.should == "Bob Smith"
     end
+
+    it "should concat a name when it's nil" do
+      user = Factory(:user)
+      test = user.name
+      test.should == ""
+    end
   end
 end
