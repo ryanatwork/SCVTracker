@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :trackable, :validatable,:timeoutable, :registerable, :lockable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :admin,:email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  attr_accessible :admin,:approved,:email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
   has_many :students, :class_name => "Student", :foreign_key => "school_deputy_id"
 
@@ -25,7 +25,11 @@ class User < ActiveRecord::Base
   end
 
   def name
-    self.first_name + ' ' + self.last_name
+    if self.first_name.nil? and self.last_name.nil?
+      name = ""
+    else
+      self.first_name + ' ' + self.last_name
+    end
   end
 
   def has_role?(role_sym)
