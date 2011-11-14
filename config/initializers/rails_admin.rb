@@ -24,7 +24,7 @@ RailsAdmin.config do |config|
   # RailsAdmin.config do |config|
      config.authenticate_with do
        authenticate_user!
-       redirect_to root_path unless current_user.admin?
+       redirect_to main_app.home_index_path, :alert =>"You don't have access to this section" unless current_user.admin?
      end
   # end
   # Example Custom Warden
