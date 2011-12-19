@@ -75,7 +75,7 @@ GEM
     eventmachine (0.12.10)
     execjs (1.2.12)
       multi_json (~> 1.0)
-    factory_girl (2.3.0)
+    factory_girl (2.3.2)
       activesupport
     factory_girl_rails (1.4.0)
       factory_girl (~> 2.3.0)
